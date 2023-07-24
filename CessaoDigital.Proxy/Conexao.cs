@@ -13,9 +13,9 @@ namespace CessaoDigital.Proxy
     {
         private static readonly Dictionary<Ambiente, string> apis = new(3)
         {
-            { Ambiente.Sandbox, "https://sandbox.bitsign.com.br/api/{0}/" },
-            { Ambiente.Producao, "https://bitsign.com.br/api/{0}/" },
-            { Ambiente.Local, "http://localhost:33664/api/{0}/" }
+            { Ambiente.Sandbox, "https://sandbox.cessaodigital.com.br/api/{0}/" },
+            { Ambiente.Producao, "https://cessaodigital.com.br/api/{0}/" },
+            { Ambiente.Local, "https://localhost:44312/api/{0}/" }
         };
 
         /// <summary>
