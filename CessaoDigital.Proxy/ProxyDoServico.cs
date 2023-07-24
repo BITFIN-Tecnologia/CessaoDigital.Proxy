@@ -43,7 +43,7 @@ namespace CessaoDigital.Proxy
 
             this.proxy.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue(
-                    "Basic",
+                    "CD-ApiKey",
                     Convert.ToBase64String(Encoding.UTF8.GetBytes($"{conexao.CodigoDoContratante}:{conexao.ChaveDeIntegracao}")));
 
             this.proxy.DefaultRequestHeaders.Add("Accept", "application/json");
