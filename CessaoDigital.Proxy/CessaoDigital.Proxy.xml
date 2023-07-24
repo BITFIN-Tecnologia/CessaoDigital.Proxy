@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CessaoDigital.Proxy</name>
+    </assembly>
+    <members>
+        <member name="T:CessaoDigital.Proxy.Ambiente">
+            <summary>
+            Tipos de ambientes disponíveis para consumo dos serviços.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Ambiente.Sandbox">
+            <summary>
+            Ambiente destinado exclusivamente para testes de implementação e integração.
+            </summary>
+            <remarks>O ambiente de Sandbox é um "espelho" do ambiente de Produção, com exceção de que as assinaturas realizadas não são efetivamente válidas.</remarks>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Ambiente.Producao">
+            <summary>
+            Esta opção indica que as requisições serão encaminhadas para ambiente de Produção, e estarão sujeitas à cobrança e aos encargos do plano contratado.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Ambiente.Local">
+            <summary>
+            Utilizado quando a solução está hospedada localmente (on-premises).
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Comunicacao.API">
+            <summary>
+            Classe base que define os recursos necessários para comunicação com a API remota.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Comunicacao.API.proxy">
+            <summary>
+            Proxy HTTP pré-configurado para comunicação com o serviço.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.API.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Inicializa a API.
+            </summary>
+            <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.API.Executar(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Configura, envia e captura o retorno da requisição para um determinado serviço.
+            </summary>
+            <param name="requisicao">Mensagem de requisição para o serviço.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.API.Executar``1(System.Net.Http.HttpRequestMessage,System.Func{System.Net.Http.HttpResponseMessage,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Configura, envia e captura o retorno da requisição para um determinado serviço.
+            </summary>
+            <typeparam name="T">Especifica o tipo em que o conteúdo de retorno deverá ser deserializado.</typeparam>
+            <param name="requisicao">Mensagem de requisição para o serviço.</param>
+            <param name="analiseDeRetorno">Função que analisa o retorno e constrói o objeto do tipo <typeparamref name="T"/></param>.
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+            <returns>Retorna o objeto do tipo <typeparamref name="T"/> pronto para utilização.</returns>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Comunicacao.API.MimeType">
+            <summary>
+            Mime type padrão.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Financeiro">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Financeiro.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            
+            </summary>
+            <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            
+            </summary>
+            /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            
+            </summary>
+            /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">
+            <summary>
+            Exceção customizada que traduz a <see cref="T:CessaoDigital.Proxy.DTOs.Falha"/> em uma exceção.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao.#ctor(System.Net.Http.HttpRequestException,CessaoDigital.Proxy.DTOs.Falha)">
+            <summary>
+            Inicializa a exceção
+            </summary>
+            <param name="excecao">Exceção disparada pela plataforma.</param>
+            <param name="falha">Dados customizados da falha que foram informados pelo serviço.</param>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Conexao">
+            <summary>
+            Informações necessárias para iniciar a comunicação com o serviço.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(System.String,CessaoDigital.Proxy.Ambiente,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            Inicializa a conexão com o mínimo necessário para estabelecer a comunicação com um determinado <see cref="T:CessaoDigital.Proxy.Ambiente"/>.
+            </summary>
+            <param name="ambiente">Ambiente de testes (Sandbox), produção ou local.</param>
+            <param name="versao">Versão da API que deve ser utilizada.</param>
+            <param name="codigoDoContratante">Código exclusivo do contratante.</param>
+            <param name="chaveDeIntegracao">Chave de integração da Aplicação.</param>
+            <param name="timeout">Define o tempo máximo de espera permitido para executar uma requisição. O tempo padrão é de 100 segundos.</param>
+            <exception cref="T:System.ArgumentException">Se o <paramref name="codigoDoContratante"/> ou o <paramref name="chaveDeIntegracao"/> forem <see cref="F:System.Guid.Empty"/> ou se a <paramref name="versao"/> for vazia.</exception>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.Ambiente">
+            <summary>
+            Ambiente, Sandbox, Produção ou Local.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.Versao">
+            <summary>
+            Versão da API.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.CodigoDoContratante">
+            <summary>
+            Código do Contratante.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.ChaveDeIntegracao">
+            <summary>
+            Chave de Integração gerado para o contratante.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.Timeout">
+            <summary>
+            Define o tempo máximo de espera permitido para executar uma requisição. O tempo padrão é de 100 segundos.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.Url">
+            <summary>
+            Endereço base (HTTP) onde as APIs estão hospedadas, que varia de acordo com o <see cref="P:CessaoDigital.Proxy.Conexao.Ambiente"/>.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Base">
+            <summary>
+            Classe com recursos comuns para os DTOs.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Falha">
+            <summary>
+            Representa uma falha ocorrida durante a execução do serviço.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Falha.Mensagem">
+            <summary>
+            Mensagem resumida sobre o problema ocorrido.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Falha.Descricao">
+            <summary>
+            Descreve de forma mais detalhada o motivo da falha.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Falha.Link">
+            <summary>
+            Opcionalmente informa um endereço com informações complementares sobre a falha.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Logging.ILogger">
+            <summary>
+            Definição para a criação e armazenamento de logs de execução.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.ILogger.Escrever(CessaoDigital.Proxy.Logging.Severidade,System.String)">
+            <summary>
+            Permite incluir uma mensagem e sua respectiva severidade.
+            </summary>
+            <param name="severidade">Severidade da mensagem.</param>
+            <param name="mensagem">Mensagem a ser armazenada.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.ILogger.Escrever(System.Exception)">
+            <summary>
+            Informa que uma exceção ocorreu.
+            </summary>
+            <param name="excecao">Dados da exceção ocorrida.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.ILogger.QuebrarLinha">
+            <summary>
+            Inclui uma quebra de linha.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.ILogger.Flush">
+            <summary>
+            Efetiva fisicamente a gravação dos logs.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Logging.IRastreio">
+            <summary>
+            Define a estrutura para geração de códigos de rastreio.
+            </summary>
+            <remarks>O rastreio de requisições é útil para correlacionar as requisições com os logs armazenados pelos serviços.</remarks>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.IRastreio.Gerar">
+            <summary>
+            Método que gera o código de rastreio.
+            </summary>
+            <returns>Valor aleatório, que identifica unicamente a requisição.</returns>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Logging.LogEmTexto">
+            <summary>
+            Armazena os logs gerados em formato texto.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.LogEmTexto.#ctor(System.IO.TextWriter,System.Int32)">
+            <summary>
+            Inicializa o log com armazenamento das mensagens no sistema de arquivos.
+            </summary>
+            <param name="escritor">Local onde serão armazenadas as mensagens de logs que forem geradas.</param>
+            <param name="qtdeDeMensagensParaFlush">Quantidade de mensagens em buffer. Quando este valor for atingido, as mensagens serão escritas no arquivo. O padrão é <c>10</c>.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.LogEmTexto.Escrever(System.Exception)">
+            <summary>
+            Informa que uma exceção ocorreu.
+            </summary>
+            <param name="excecao">Dados da exceção ocorrida.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.LogEmTexto.Escrever(CessaoDigital.Proxy.Logging.Severidade,System.String)">
+            <summary>
+            Permite incluir uma mensagem e sua respectiva severidade.
+            </summary>
+            <param name="severidade">Severidade da mensagem.</param>
+            <param name="mensagem">Mensagem a ser armazenada.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.LogEmTexto.QuebrarLinha">
+            <summary>
+            Inclui uma quebra de linha.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.LogEmTexto.Flush">
+            <summary>
+            Efetiva fisicamente a gravação dos logs.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.LogEmTexto.Dispose">
+            <summary>
+            Armazena eventuais mensagens que estejam no buffer, encerra e descarta os recursos utilizados.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Logging.RastreioComGuid">
+            <summary>
+            Gerador de código de rastreio com base no <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Logging.RastreioComGuid.Gerar">
+            <summary>
+            Ao gerar, o método <see cref="M:System.Guid.NewGuid"/> é chamado.
+            </summary>
+            <returns>Retorna um <see cref="T:System.Guid"/> em formato <c>string</c>.</returns>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Logging.Severidade">
+            <summary>
+            Opções para categorização dos logs.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Logging.Severidade.Info">
+            <summary>
+            Mensagem meramente informativa.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Logging.Severidade.Alerta">
+            <summary>
+            Alerta de que algo não está como esperado, mas que não prejudica a execução.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Logging.Severidade.Erro">
+            <summary>
+            Algum erro previsto ocorreu durante a execução.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Logging.Severidade.Excecao">
+            <summary>
+            Uma falha não prevista ocorreu durante a execução.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.ProxyDoServico">
+            <summary>
+            Abstrai toda a comunicação com os serviços (APIs) da Plataforma Cessão Digital.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.ProxyDoServico.#ctor(CessaoDigital.Proxy.Conexao,CessaoDigital.Proxy.Logging.ILogger,CessaoDigital.Proxy.Logging.IRastreio,System.Net.IWebProxy)">
+            <summary>
+            Inicializa o proxy.
+            </summary>
+            <param name="conexao">Dados da conexão com o ambiente.</param>
+            <param name="logger">Instância de <see cref="T:CessaoDigital.Proxy.Logging.ILogger"/> para gestão e armazenamento de logs gerados pelo proxy.</param>
+            <param name="rastreioDeRequisicao">Gerador de códigos de rastreio de requisições.</param>
+            <param name="webProxy">Especifica um proxy para ser utilizado ao realizar as requisições para os serviços.</param>
+            <exception cref="T:System.ArgumentNullException">Se a <paramref name="conexao"/> não for informada.</exception>
+        </member>
+        <member name="P:CessaoDigital.Proxy.ProxyDoServico.Conexao">
+            <summary>
+            Dados de conexão com um dos <see cref="T:CessaoDigital.Proxy.Ambiente"/>s disponíveis.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.ProxyDoServico.Ancora">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.ProxyDoServico.Financeiro">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.ProxyDoServico.Instituicao">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.ProxyDoServico.Recebiveis">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.ProxyDoServico.Dispose">
+            <summary>
+            Encerra e remove os recursos de comunicação utilizados por esta classe.
+            </summary>
+        </member>
+    </members>
+</doc>
