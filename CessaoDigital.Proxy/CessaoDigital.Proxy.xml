@@ -176,6 +176,7 @@
              <code>
             {
               "CessaoDigital.Proxy": {
+                "ConexaoPadrao": "Producao",
                 "Conexoes": [
                   {
                     "Ambiente": "Sandbox",
@@ -212,6 +213,11 @@
         <member name="P:CessaoDigital.Proxy.Configuracoes.Configuracao.Conexoes">
             <summary>
             Relação de conexões configuradas.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Configuracoes.Configuracao.ConexaoPadrao">
+            <summary>
+            Indica qual conexão será utilizada por padrão.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Base">

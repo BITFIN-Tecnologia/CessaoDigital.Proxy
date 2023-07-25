@@ -17,6 +17,7 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// <code>
         ///{
         ///  "CessaoDigital.Proxy": {
+        ///    "ConexaoPadrao": "Producao",
         ///    "Conexoes": [
         ///      {
         ///        "Ambiente": "Sandbox",
@@ -59,6 +60,7 @@ namespace CessaoDigital.Proxy.Configuracoes
                 throw new InvalidOperationException($"Existem duas ou mais conexões com o ambiente \"{ambiente}\".");
 
             this.Conexoes = conexoes;
+            this.ConexaoPadrao = Enum.Parse<Ambiente>(config.GetSection("CessaoDigital.Proxy")["ConexaoPadrao"]);
         }
 
         private static bool VerificarDuplicidades(IEnumerable<Conexao> conexoes, out Ambiente? ambiente)

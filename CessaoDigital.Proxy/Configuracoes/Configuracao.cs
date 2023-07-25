@@ -20,5 +20,10 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// Relação de conexões configuradas.
         /// </summary>
         public IEnumerable<Conexao> Conexoes { get; protected set; }
+
+        /// <summary>
+        /// Indica qual conexão será utilizada por padrão.
+        /// </summary>
+        public Ambiente ConexaoPadrao { get; protected set; }
     }
 }
