@@ -227,9 +227,419 @@
             Indica qual conexão será utilizada por padrão.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Antecipacao">
+            <summary>
+            Operação de Antecipação de Notas Fiscais para Fornecedor.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Sacado">
+            <summary>
+            Entidade antecipadora dos recursos.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Fornecedor">
+            <summary>
+            Entidade fornecedora que antecipou as pagamentos.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ContaDeDestino">
+            <summary>
+            Conta Bancária para onde os recursos foram enviados.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.TipoDePagamento">
+            <summary>
+            Tipo do Pagamento (TED ou PIX).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.LinhaDeCredito">
+            <summary>
+            Linha de créddito utilizada na Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Codigo">
+            <summary>
+            Código que identifica unicamente a antecipação na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.DataDeCadastro">
+            <summary>
+            Data de cadastro da Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Status">
+            <summary>
+            Status de andamento da Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.DataDoStatus">
+            <summary>
+            Data do Status.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Resultado">
+            <summary>
+            Resultado financeiro da Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Formalizacao">
+            <summary>
+            Informações sobre a assinatura digital da Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.DataDeCredito">
+            <summary>
+            Data em que o crédito foi realizado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Itens">
+            <summary>
+            Parcelas das Notas Fiscais vinculadas à Operação.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao">
+            <summary>
+            Taxas e tarifas aplicadas na Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.PrazoMedio">
+            <summary>
+            Prazo médio (em dias).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.QuantidadeDeParcelas">
+            <summary>
+            Quantidade de parcelas antecipadas.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalBruto">
+            <summary>
+            Total bruto das parcelas.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.Tac">
+            <summary>
+            Tarifa por Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TaxaDeJuros">
+            <summary>
+            Taxa de juros aplicada.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalDeJuros">
+            <summary>
+            Total de juros apurado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TaxaDeRebate">
+            <summary>
+            Taxa de rebate aplicada.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalDeRebate">
+            <summary>
+            Total de rebate apurado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalDeIof">
+            <summary>
+            Total de IOF apurado (se aplicável).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TarifaDePagamento">
+            <summary>
+            Tarifa de TED/PIX.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TarifaDeCobranca">
+            <summary>
+            Tarifa de cobrança (por recebível).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TarifaDeFormalizacaoDeAditivo">
+            <summary>
+            Tarifa de formalização do aditivo.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TarifaDeFormalizacaoDeDuplicata">
+            <summary>
+            Tarifa de formalização por duplicata.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalDeCobranca">
+            <summary>
+            Total de cobrança apurado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalDeFormalizacao">
+            <summary>
+            Total de formalização apurado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TotalLiquido">
+            <summary>
+            Total líquido da Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.ResultadoDaAntecipacao.TaxaEfetiva">
+            <summary>
+            Custo Efetivo Total (CET).
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Antecipacao.Item">
+            <summary>
+            Detalhes do item associado à Operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.NotaFiscal">
+            <summary>
+            Nota Fiscal Mercantil.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.Parcela">
+            <summary>
+            Parcela associada.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.Prazo">
+            <summary>
+            Prazo (em dias) para vencimento da parcela.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.ValorDeIof">
+            <summary>
+            Valor de IOF da parcela (se aplicável).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.ValorDeJuros">
+            <summary>
+            Valor de juros da parcela.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.ValorDoRebate">
+            <summary>
+            Valor de rebate da parcela.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Antecipacao.Item.ValorLiquido">
+            <summary>
+            Valor líquido da parcela.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Banco">
+            <summary>
+            Dados do Banco.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Banco.Codigo">
+            <summary>
+            Código que identifica o Banco no SPB.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Banco.Nome">
+            <summary>
+            "Nome comercial do Banco.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Base">
             <summary>
             Classe com recursos comuns para os DTOs.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.ContaBancaria">
+            <summary>
+            Dados da Conta bancária em Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.Titular">
+            <summary>
+            Dados da Entidade titular da conta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.Banco">
+            <summary>
+            Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.Agencia">
+            <summary>
+            Código da Agência.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.Numero">
+            <summary>
+            Número da Conta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.Digito">
+            <summary>
+            Dígito da Conta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.ChavePix">
+            <summary>
+            Chave PIX associada à Conta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.DataDeCadastro">
+            <summary>
+            Data de cadastro na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaBancaria.Ativa">
+            <summary>
+            Indica se a Conta está disponível para utilização.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.ContaOperacional">
+            <summary>
+            Dados da Conta bancária em Instituição (FIDC, Factoring ou Securitizadora).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaOperacional.Titular">
+            <summary>
+            Dados da Entidade titular da conta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaOperacional.Instituicao">
+            <summary>
+            Instituição (FIDC, Factoring ou Securitizadora).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaOperacional.Numero">
+            <summary>
+            Número da Conta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaOperacional.DataDeCadastro">
+            <summary>
+            Data de cadastro na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ContaOperacional.Ativa">
+            <summary>
+            Indica se a Conta está disponível para utilização.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Contratante">
+            <summary>
+            Contratante da Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contratante.Entidade">
+            <summary>
+            Informações sobre a entidade contratante.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.DocumentoDigital">
+            <summary>
+            Representa um Documento que foi assinado digitalmente.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoDigital.DataDeCadastro">
+            <summary>
+            Data de geração do Documento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoDigital.Tipo">
+            <summary>
+            Tipo do Documento (Exemplo: Termo de Adesão, Termo de Cessão, etc.).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoDigital.Link">
+            <summary>
+            Link de acesso à Certificadora.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoDigital.Status">
+            <summary>
+            Status de assinatura do Documento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoDigital.DataDoStatus">
+            <summary>
+            Data do Status.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Endereco">
+            <summary>
+            Informações de endereço.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Cep">
+            <summary>
+            CEP do Logradouro ou Cidade.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Logradouro">
+            <summary>
+            Logradouro (Rua, Avenida, etc.).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Numero">
+            <summary>
+            Número do prédio ou da casa.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Complemento">
+            <summary>
+            Complemento (Andar, Edifício, etc.).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Bairro">
+            <summary>
+            Bairro.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Localidade">
+            <summary>
+            Localidade (Cidade).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Estado">
+            <summary>
+            "Estado (UF).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Endereco.Pais">
+            <summary>
+            País (Brasil).
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Entidade">
+            <summary>
+            Entidade que representa uma Pessoa Física ou Jurídica.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Entidade.Nome">
+            <summary>
+            Nome/Razão Social da entidade.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Entidade.Documento">
+            <summary>
+            Documento (CNPJ/CPF) da entidade.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Entidade.Tipo">
+            <summary>
+            PJ (Pessoa Jurídica) ou PF (Pessoa Física).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Entidade.Endereco">
+            <summary>
+            Endereço da empresa ou de residência.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Entidade.Email">
+            <summary>
+            Endereço de e-mail para eventual comunicação/notificação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Entidade.Telefone">
+            <summary>
+            Telefone para contato da entidade.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Falha">
@@ -250,6 +660,281 @@
         <member name="P:CessaoDigital.Proxy.DTOs.Falha.Link">
             <summary>
             Opcionalmente informa um endereço com informações complementares sobre a falha.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Fornecedor">
+            <summary>
+            Dados do fornecedor.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fornecedor.Codigo">
+            <summary>
+            Código que identifica unificamente na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fornecedor.Data">
+            <summary>
+            Data em que foi habilitado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fornecedor.Entidade">
+            <summary>
+            Entidade (pessoa física ou jurídica).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fornecedor.Limite">
+            <summary>
+            Limite máximo para antecipação definido para o fornecedor.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fornecedor.Habilitado">
+            <summary>
+            Indica se o fornecedor está ou não habilitado.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Instituicao">
+            <summary>
+            Dados da Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Instituicao.Entidade">
+            <summary>
+            Dados cadastrais da Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Instituicao.Tipo">
+            <summary>
+            FIDC, Factoring, Securitizadora ou ESC.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Instituicao.Alias">
+            <summary>
+            Alias que identifica a Instituição.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.LinhaDeCredito">
+            <summary>
+            Informações sobre a Linha de Crédito.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.DataDeCadastro">
+            <summary>
+            Data em que a linha de crédito foi cadastrada na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.NumeroDoContrato">
+            <summary>
+            Número do Contrato junto à Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.Limite">
+            <summary>
+            Limite total concedido pela Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.LimiteUtilizado">
+            <summary>
+            Total utilizado do limite.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.AvaliaDisponibilidadeDeLimite">
+            <summary>
+            Indica se a Plataforma deverá impedir a Operação se não houver limite disponível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.ConcentracaoPorFornecedor">
+            <summary>
+            Define o limitador de quanto um fornecedor poderá antecipar.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TaxaDeJuros">
+            <summary>
+            Taxa de juros aplicada nesta linha.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TaxaDeRebate">
+            <summary>
+            Taxa de rebate acordada cmo a Instituição.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.IncideIof">
+            <summary>
+            Indica se incide ou não a cobrança de IOF.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.Tac">
+            <summary>
+            Tarifa por operação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TarifaDePagamento">
+            <summary>
+            Tarifa de TED/PIX.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TarifaDeCobranca">
+            <summary>
+            Tarifa de Registro no Banco Cobrador.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TarifaDeFormalizacaoDeAditivo">
+            <summary>
+            Tarifa com formalização de Aditivo (assinaturas digitais).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TarifaDeFormalizacaoDeDuplicata">
+            <summary>
+            Tarifa com formalização de Duplicata (assinaturas digitais).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.ContaBancaria">
+            <summary>
+            Conta na Instituição Financeira que concedeu o limite.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.ContaOperacional">
+            <summary>
+            Conta na Instituição (FIDC, Factoring ou Securitizadora) que concedeu o limite.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.HoraInicialDasOperacoes">
+            <summary>
+            Hora inicial em que esta linha está disponível para o recebimento de operações.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.HoraFinalDasOperacoes">
+            <summary>
+            Hora final em que esta linha recebe operações para análise e pagamento dentro do mesmo dia.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.Ativa">
+            <summary>
+            Indica se a linha está ativa para a realização de operações.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.Fornecedores">
+            <summary>
+            Relação de fornecedores formalizados na linha de crédito.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.NFe">
+            <summary>
+            Informações sobre a nota fiscal mercantil.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Emitente">
+            <summary>
+            Entidade emissora da nota fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Destinatario">
+            <summary>
+            Entidade destinatária da nota fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Danfe">
+            <summary>
+            Chave do DANFE.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Numero">
+            <summary>
+            Número da nota fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.DataDeEmissao">
+            <summary>
+            Data/hora de emissão da nota fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Valor">
+            <summary>
+            Valor total da nota fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.QuantidadeDeParcelas">
+            <summary>
+            Quantidade de parcelas constantes na nota fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Conteudo">
+            <summary>
+            Representação da nota fiscal (XML).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.DataDeCadastro">
+            <summary>
+            Data de cadastro na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Status">
+            <summary>
+            Status de autorização junto à SEFAZ.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Parcelas">
+            <summary>
+            Relação de parcelas da nota fiscal.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.NFe.Parcela">
+            <summary>
+            Dados da parcela.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Parcela.Numero">
+            <summary>
+            Número (sequencial) da parcela.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Parcela.DataDeVencimento">
+            <summary>
+            Data de vencimento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Parcela.Valor">
+            <summary>
+            Valor total da parcela.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.NFe.Parcela.Antecipada">
+            <summary>
+            Indica se a mesma já foi antecipada.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao">
+            <summary>
+            Reporte do andamento da operação na Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.Status">
+            <summary>
+            Status da Operação: Formalização, Financeiro, Concluída ou Rejeitada.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.TermoDeCessao">
+            <summary>
+            Termo de Cessão, em formato P7S, codificado em Base64. Será exigido quando o status for "Financeiro".
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.ComprovanteDePagamento">
+            <summary>
+            Comprovante de Pagamento, em formato PDF, codificado em Base64. Será exigido quando o status for "Concluída".
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.LinkParaAssinatura">
+            <summary>
+            Link para a certificadora digital encarregada de coletar as assinaturas no Termo de Cessão.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.DataDeCredito">
+            <summary>
+            Data/hora em que o crédito foi realizado. Será exigido quando o status for "Concluída".
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.MotivoDeRejeicao">
+            <summary>
+            Motivo pelo qual a Instituição está rejeitando a operação. Será exigido quando o status for "Rejeitada".
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.StatusDoFornecedor">
