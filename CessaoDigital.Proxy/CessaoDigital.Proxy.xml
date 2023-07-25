@@ -78,14 +78,21 @@
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao">
             <summary>
-            
+            Conjuto de API's para gestão pela Instituição Financeira através do produto Antecipação à Fornecedores.
             </summary>
         </member>
         <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.#ctor(System.Net.Http.HttpClient)">
             <summary>
-            
+            Inicializa a API para Instituições Financeiras.
             </summary>
             /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.AtualizarFornecedor(CessaoDigital.Proxy.DTOs.StatusDoFornecedor,System.Threading.CancellationToken)">
+            <summary>
+            Permite à Instituição alternar o status do Fornecedor.
+            </summary>
+            <param name="status">Status do Fornecedor.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis">
             <summary>
@@ -179,6 +186,26 @@
         <member name="P:CessaoDigital.Proxy.DTOs.Falha.Link">
             <summary>
             Opcionalmente informa um endereço com informações complementares sobre a falha.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.StatusDoFornecedor">
+            <summary>
+            Status de formalização do Fornecedor.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Codigo">
+            <summary>
+            Código que identifica o Fornecedor unificamente na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Habilitado">
+            <summary>
+            Indica se o fornecedor está ou não habilitado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Mensagem">
+            <summary>
+            Mensagem customizada para justificar o status.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.Logging.ILogger">
