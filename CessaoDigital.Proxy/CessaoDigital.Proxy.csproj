@@ -6,6 +6,18 @@
     <Nullable>disable</Nullable>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Projetos\BITFIN\CessaoDigital.Proxy\CessaoDigital.Proxy\CessaoDigital.Proxy.xml</DocumentationFile>
+    <PackageId>BITFIN.CessaoDigital.Proxy</PackageId>
+    <Version>0.0.1.0</Version>
+    <Authors>BITFIN Software Ltda.</Authors>
+    <Company>BITFIN Software Ltda.</Company>
+    <Copyright>Copyright 2023</Copyright>
+    <PackageProjectUrl>https://cessaodigital.com.br</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BITFIN-Software/CessaoDigital.Proxy</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>fidc, fornecedores, factoring, sacado, riscosacado, securitizadora</PackageTags>
+    <Title>Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Cessão Digital, intermediando a comunicação do Portal para Sacados e Antecipação para Fornecedores.</Title>
+    <Description>Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Cessão Digital, intermediando a comunicação do Portal para Sacados e Antecipação para Fornecedores.</Description>
+    <PackageIcon>Icon.png</PackageIcon>
   </PropertyGroup>
 
 </Project>
