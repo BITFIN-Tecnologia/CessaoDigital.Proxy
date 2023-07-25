@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Projetos\BITFIN\CessaoDigital.Proxy\CessaoDigital.Proxy\CessaoDigital.Proxy.xml</DocumentationFile>
     <PackageId>BITFIN.CessaoDigital.Proxy</PackageId>
-    <Version>0.0.1.1</Version>
+    <Version>0.0.1.2</Version>
     <Authors>BITFIN Software Ltda.</Authors>
     <Company>BITFIN Software Ltda.</Company>
     <Copyright>Copyright 2023</Copyright>
