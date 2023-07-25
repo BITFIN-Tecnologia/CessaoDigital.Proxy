@@ -24,7 +24,7 @@ namespace CessaoDigital.Proxy.Comunicacao
         public API(HttpClient proxy)
         {
             this.proxy = proxy;
-            this.MimeType = new MediaTypeWithQualityHeaderValue("application/json");
+            this.MimeType = new MediaTypeWithQualityHeaderValue(Protocolo.MimeType);
         }
 
         /// <summary>

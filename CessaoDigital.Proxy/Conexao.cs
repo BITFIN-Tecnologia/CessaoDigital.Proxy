@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.
 // Código exclusivo para consumo dos serviços (API's) da Plataforma Cessão Digital.
 
+using CessaoDigital.Proxy.Utilitarios;
 using System.Diagnostics;
 
 namespace CessaoDigital.Proxy
@@ -72,5 +73,15 @@ namespace CessaoDigital.Proxy
         /// Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="Ambiente"/>.
         /// </summary>
         public Uri Url { get; private set; }
+
+        /// <summary>
+        /// Retorna a conexão em formato do header Authorization.
+        /// </summary>
+        /// <param name="comLabel">Indica se deve incluir a chave Authorization. O padrão é <c>true</c>.</param>
+        /// <returns><see cref="String"/> representando a respectiva conexão.</returns>
+        public string GerarCabecalho(bool comLabel = true) =>
+            comLabel ?
+                $"Autorization:{Protocolo.ApiKey} {$"{this.CodigoDoContratante}:{this.ChaveDeIntegracao}".EmBase64()}" :
+                $"{$"{this.CodigoDoContratante}:{this.ChaveDeIntegracao}".EmBase64()}";
     }
 }

@@ -163,6 +163,13 @@
             Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="P:CessaoDigital.Proxy.Conexao.Ambiente"/>.
             </summary>
         </member>
+        <member name="M:CessaoDigital.Proxy.Conexao.GerarCabecalho(System.Boolean)">
+            <summary>
+            Retorna a conexão em formato do header Authorization.
+            </summary>
+            <param name="comLabel">Indica se deve incluir a chave Authorization. O padrão é <c>true</c>.</param>
+            <returns><see cref="T:System.String"/> representando a respectiva conexão.</returns>
+        </member>
         <member name="T:CessaoDigital.Proxy.Configuracoes.AppSettingsJson">
             <summary>
             Configurações baseadas no arquivo appsettings.json (JSON).
@@ -379,6 +386,26 @@
         <member name="F:CessaoDigital.Proxy.Logging.Severidade.Excecao">
             <summary>
             Uma falha não prevista ocorreu durante a execução.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Protocolo">
+            <summary>
+            Constantes utilizadas na comunicação.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Protocolo.ApiKey">
+            <summary>
+            Scheme de autorização.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Protocolo.CodigoDeRastreio">
+            <summary>
+            Chave para correlação de requisição e resposta.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.Protocolo.MimeType">
+            <summary>
+            Formato padrão de serialização das requisições e resposta.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.ProxyDoServico">
