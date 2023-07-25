@@ -122,7 +122,7 @@
             Informações necessárias para iniciar a comunicação com o serviço.
             </summary>
         </member>
-        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(System.String,CessaoDigital.Proxy.Ambiente,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
+        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(CessaoDigital.Proxy.Ambiente,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
             <summary>
             Inicializa a conexão com o mínimo necessário para estabelecer a comunicação com um determinado <see cref="T:CessaoDigital.Proxy.Ambiente"/>.
             </summary>
@@ -161,6 +161,57 @@
         <member name="P:CessaoDigital.Proxy.Conexao.Url">
             <summary>
             Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="P:CessaoDigital.Proxy.Conexao.Ambiente"/>.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Configuracoes.AppSettingsJson">
+            <summary>
+            Configurações baseadas no arquivo appsettings.json (JSON).
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Configuracoes.AppSettingsJson.#ctor">
+             <summary>
+             Inicializa as configurações extraindo as informações do arquivo appsettings.json.
+             </summary>
+             <example>
+             <code>
+            {
+              "CessaoDigital.Proxy": {
+                "Conexoes": [
+                  {
+                    "Ambiente": "Sandbox",
+                    "Versao": "v1",
+                    "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
+                    "ChaveDeIntegracao": "TWpZd00yTXpPVGN...zWkRVM01qTmhNR0Zq",
+                    "Timeout": "00:00:10"
+                  },
+                  {
+                    "Ambiente": "Producao",
+                    "Versao": "v1",
+                    "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
+                    "ChaveDeIntegracao": "zWkRVM01qTmhNR0Zq...TWpZd00yTXpPVGN",
+                    "Timeout": "00:00:20"
+                  }
+                ]
+              }
+            }
+             </code>
+             </example>
+        </member>
+        <member name="T:CessaoDigital.Proxy.Configuracoes.Configuracao">
+            <summary>
+            Base para arquivos de configuração.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Configuracoes.Configuracao.Conexao(CessaoDigital.Proxy.Ambiente)">
+            <summary>
+            Retorna a conexão correspondente à um determinado (<see cref="T:CessaoDigital.Proxy.Ambiente"/>).
+            </summary>
+            <param name="ambiente">Ambiente para conexão.</param>
+            <returns>Objeto <see cref="T:CessaoDigital.Proxy.Conexao"/> correspodente. Nulo será retornado se não houver uma conexão com o ambiente.</returns>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Configuracoes.Configuracao.Conexoes">
+            <summary>
+            Relação de conexões configuradas.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Base">

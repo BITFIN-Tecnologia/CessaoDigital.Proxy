@@ -8,7 +8,7 @@ namespace CessaoDigital.Proxy
     /// <summary>
     /// Informações necessárias para iniciar a comunicação com o serviço.
     /// </summary>
-    [DebuggerDisplay("{Url,nq}")]
+    [DebuggerDisplay("{Ambiente}")]
     public class Conexao
     {
         private static readonly Dictionary<Ambiente, string> apis = new(3)
@@ -27,7 +27,7 @@ namespace CessaoDigital.Proxy
         /// <param name="chaveDeIntegracao">Chave de integração da Aplicação.</param>
         /// <param name="timeout">Define o tempo máximo de espera permitido para executar uma requisição. O tempo padrão é de 100 segundos.</param>
         /// <exception cref="ArgumentException">Se o <paramref name="codigoDoContratante"/> ou o <paramref name="chaveDeIntegracao"/> forem <see cref="Guid.Empty"/> ou se a <paramref name="versao"/> for vazia.</exception>
-        public Conexao(string nome, Ambiente ambiente, string versao, Guid codigoDoContratante, string chaveDeIntegracao, TimeSpan? timeout = null)
+        public Conexao(Ambiente ambiente, string versao, Guid codigoDoContratante, string chaveDeIntegracao, TimeSpan? timeout = null)
         {
             this.Versao = !string.IsNullOrWhiteSpace(versao) ? versao : throw new ArgumentException("Versão não informada.", nameof(versao));
 

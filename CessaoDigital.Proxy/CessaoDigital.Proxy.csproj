@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Projetos\BITFIN\CessaoDigital.Proxy\CessaoDigital.Proxy\CessaoDigital.Proxy.xml</DocumentationFile>
     <PackageId>BITFIN.CessaoDigital.Proxy</PackageId>
-    <Version>0.0.1.0</Version>
+    <Version>0.0.1.1</Version>
     <Authors>BITFIN Software Ltda.</Authors>
     <Company>BITFIN Software Ltda.</Company>
     <Copyright>Copyright 2023</Copyright>
@@ -20,6 +20,12 @@
     <PackageIcon>Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="Icon.png">
