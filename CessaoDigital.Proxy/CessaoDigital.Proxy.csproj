@@ -18,6 +18,14 @@
     <Title>Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Cessão Digital, intermediando a comunicação do Portal para Sacados e Antecipação para Fornecedores.</Title>
     <Description>Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Cessão Digital, intermediando a comunicação do Portal para Sacados e Antecipação para Fornecedores.</Description>
     <PackageIcon>Icon.png</PackageIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
