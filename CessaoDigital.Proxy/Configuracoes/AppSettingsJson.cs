@@ -47,7 +47,7 @@ namespace CessaoDigital.Proxy.Configuracoes
                     .Build();
 
             var conexoes =
-                from c in config.GetSection("BITSIGN.Proxy:Conexoes").GetChildren()
+                from c in config.GetSection("CessaoDigital.Proxy:Conexoes").GetChildren()
                 select new Conexao(
                     Enum.Parse<Ambiente>(c["Ambiente"]),
                     c["Versao"],
