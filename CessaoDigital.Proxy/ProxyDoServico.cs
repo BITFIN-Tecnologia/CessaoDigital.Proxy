@@ -1,5 +1,5 @@
 ﻿// Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.
-// Código exclusivo para consumo dos serviços (APIs) da Plataforma Cessão Digital.
+// Código exclusivo para consumo dos serviços (API's) da Plataforma Cessão Digital.
 
 using CessaoDigital.Proxy.Comunicacao;
 using CessaoDigital.Proxy.Comunicacao.APIs;
@@ -11,7 +11,7 @@ using System.Text;
 namespace CessaoDigital.Proxy
 {
     /// <summary>
-    /// Abstrai toda a comunicação com os serviços (APIs) da Plataforma Cessão Digital.
+    /// Abstrai toda a comunicação com os serviços (API's) da Plataforma Cessão Digital.
     /// </summary>
     public class ProxyDoServico : IDisposable
     {

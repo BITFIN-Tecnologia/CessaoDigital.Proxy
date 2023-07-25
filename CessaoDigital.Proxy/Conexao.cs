@@ -1,5 +1,5 @@
 ﻿// Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.
-// Código exclusivo para consumo dos serviços (APIs) da Plataforma Cessão Digital.
+// Código exclusivo para consumo dos serviços (API's) da Plataforma Cessão Digital.
 
 using System.Diagnostics;
 
@@ -69,7 +69,7 @@ namespace CessaoDigital.Proxy
         public TimeSpan Timeout { get; private set; }
 
         /// <summary>
-        /// Endereço base (HTTP) onde as APIs estão hospedadas, que varia de acordo com o <see cref="Ambiente"/>.
+        /// Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="Ambiente"/>.
         /// </summary>
         public Uri Url { get; private set; }
     }

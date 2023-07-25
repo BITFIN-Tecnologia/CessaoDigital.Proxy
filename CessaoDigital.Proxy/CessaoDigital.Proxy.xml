@@ -160,7 +160,7 @@
         </member>
         <member name="P:CessaoDigital.Proxy.Conexao.Url">
             <summary>
-            Endereço base (HTTP) onde as APIs estão hospedadas, que varia de acordo com o <see cref="P:CessaoDigital.Proxy.Conexao.Ambiente"/>.
+            Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="P:CessaoDigital.Proxy.Conexao.Ambiente"/>.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Base">
@@ -326,7 +326,7 @@
         </member>
         <member name="T:CessaoDigital.Proxy.ProxyDoServico">
             <summary>
-            Abstrai toda a comunicação com os serviços (APIs) da Plataforma Cessão Digital.
+            Abstrai toda a comunicação com os serviços (API's) da Plataforma Cessão Digital.
             </summary>
         </member>
         <member name="M:CessaoDigital.Proxy.ProxyDoServico.#ctor(CessaoDigital.Proxy.Conexao,CessaoDigital.Proxy.Logging.ILogger,CessaoDigital.Proxy.Logging.IRastreio,System.Net.IWebProxy)">
