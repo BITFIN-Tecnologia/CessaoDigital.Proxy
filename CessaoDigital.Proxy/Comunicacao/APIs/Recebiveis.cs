@@ -4,7 +4,7 @@
 namespace CessaoDigital.Proxy.Comunicacao.APIs
 {
     /// <summary>
-    /// 
+    /// Gestão de recebíveis negociados pela Instituição Financeira enviados ao Portal para Sacados.
     /// </summary>
     public class Recebiveis : API
     {

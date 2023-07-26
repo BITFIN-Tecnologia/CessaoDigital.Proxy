@@ -240,7 +240,7 @@
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis">
             <summary>
-            
+            Gestão de recebíveis negociados pela Instituição Financeira enviados ao Portal para Sacados.
             </summary>
         </member>
         <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis.#ctor(System.Net.Http.HttpClient)">
