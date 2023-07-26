@@ -55,7 +55,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         /// <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
         /// <returns>Relação de operações que atendem os critérios de busca, incluindo informações para paginação dos resultados.</returns>
         /// <exception cref="ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
-        public async Task<IEnumerable<DTOs.Antecipacao>> Antecipacoes(DTOs.ParametrosDeBusca parametros, CancellationToken cancellationToken = default)
+        public async Task<DTOs.BuscaDeAntecipacoes> Antecipacoes(DTOs.ParametrosDeBusca parametros, CancellationToken cancellationToken = default)
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "ancora/antecipacoes")
             {
@@ -64,7 +64,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
             {
                 return await this.Executar(requisicao, async resposta =>
                 {
-                    return await resposta.Content.ReadAs<IEnumerable<DTOs.Antecipacao>>(cancellationToken);
+                    return await resposta.Content.ReadAs<DTOs.BuscaDeAntecipacoes> (cancellationToken);
                 }, cancellationToken);
             }
         }
@@ -76,7 +76,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         /// <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
         /// <returns>Retorna todas as informações sobre uma determinada Operação.</returns>
         /// <exception cref="ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
-        public async Task<DTOs.Antecipacao> Antecipacoes(string codigo, CancellationToken cancellationToken = default)
+        public async Task<DTOs.Antecipacao> Antecipacao(string codigo, CancellationToken cancellationToken = default)
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Get, $"ancora/antecipacoes/{codigo}"))
             {

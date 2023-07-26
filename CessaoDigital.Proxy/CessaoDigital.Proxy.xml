@@ -101,7 +101,7 @@
             <returns>Relação de operações que atendem os critérios de busca, incluindo informações para paginação dos resultados.</returns>
             <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         </member>
-        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacoes(System.String,System.Threading.CancellationToken)">
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacao(System.String,System.Threading.CancellationToken)">
             <summary>
             Detalhes da Operação.
             </summary>
@@ -168,12 +168,75 @@
             </summary>
             /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
         </member>
-        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.AtualizarFornecedor(CessaoDigital.Proxy.DTOs.StatusDoFornecedor,System.Threading.CancellationToken)">
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Contratacao(CessaoDigital.Proxy.DTOs.Contratacao,System.Threading.CancellationToken)">
             <summary>
-            Permite à Instituição alternar o status do Fornecedor.
+            Contratação da Plataforma.
             </summary>
+            <param name="contratacao">Informações sobre a contratação.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Credito(CessaoDigital.Proxy.DTOs.LinhaDeCredito,System.Threading.CancellationToken)">
+            <summary>
+            Concessão de Crédito.
+            </summary>
+            <param name="credito">Informações sobre a linha de crédito.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <remarks>Concede ou atualiza a linha de crédito para o Sacado.</remarks>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Fornecedores(System.Threading.CancellationToken)">
+            <summary>
+            Relação de Fornecedores.
+            </summary>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Retorna as Entidades com suas informações cadastrais.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Fornecedor(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Detalhes do Fornecedor.
+            </summary>
+            <param name="codigo">Código do Fornecedor.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Retorna os dados cadastrais, incluindo as contas bancárias utilizadas para crédito.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.StatusDoFornecedor(CessaoDigital.Proxy.DTOs.StatusDoFornecedor,System.Threading.CancellationToken)">
+            <summary>
+            Status do Fornecedor
+            </summary>
+            <remarks>Permite à Instituição alternar o status do Fornecedor.</remarks>
             <param name="status">Status do Fornecedor.</param>
             <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Antecipacoes(CessaoDigital.Proxy.DTOs.ParametrosDeBusca,System.Threading.CancellationToken)">
+            <summary>
+            Busca de Operações.
+            </summary>
+            <param name="parametros">Objeto contendo os parâmetros para busca e paginação.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Relação de operações que atendem os critérios de busca, incluindo informações para paginação dos resultados.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Antecipacao(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Detalhes da Operação.
+            </summary>
+            <param name="codigo">Código da Antecipação.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Retorna os dados completos da Operação, incluindo as notas fiscais negociadas.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.StatusDaAntecipacao(System.String,CessaoDigital.Proxy.DTOs.StatusDaAntecipacao,System.Threading.CancellationToken)">
+            <summary>
+            Status da Operação.
+            </summary>
+            <param name="codigo">Código da Antecipação.</param>
+            <param name="status">Informações sobre o andamento da operação.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis">
             <summary>
@@ -543,6 +606,21 @@
             Classe com recursos comuns para os DTOs.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.BuscaDeAntecipacoes">
+            <summary>
+            Resultado da busca por antecipações que foi realizada.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.BuscaDeAntecipacoes.Dados">
+            <summary>
+            Relação dos antecipações localizadas.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.BuscaDeAntecipacoes.Paginador">
+            <summary>
+            Informações sobre a paginação do resultado.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.ContaBancaria">
             <summary>
             Dados da Conta bancária em Instituição Financeira.
@@ -616,6 +694,36 @@
         <member name="P:CessaoDigital.Proxy.DTOs.ContaOperacional.Ativa">
             <summary>
             Indica se a Conta está disponível para utilização.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Contratacao">
+            <summary>
+            Representação da contratação entre Instituição, Sacado e Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contratacao.Instituicao">
+            <summary>
+            Dados da Instituição Financeira.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contratacao.Sacado">
+            <summary>
+            Dados do Sacado Âncora.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contratacao.LinhaDeCredito">
+            <summary>
+            Informações sobre a linha de crédito concedida.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contratacao.RepresentantesDaInstituicao">
+            <summary>
+            Representantes da Instituição Financeira para formalização do contrato com a Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contratacao.RepresentantesDoContratante">
+            <summary>
+            Representantes do Sacado Âncora para formalização do contrato com a Plataforma.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Contratante">
