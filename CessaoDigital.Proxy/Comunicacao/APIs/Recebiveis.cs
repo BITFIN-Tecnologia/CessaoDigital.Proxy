@@ -9,9 +9,9 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
     public class Recebiveis : API
     {
         /// <summary>
-        /// 
+        /// Inicializa a API para Recebíveis.
         /// </summary>
-        /// /// <param name="proxy">Instância da classe <see cref="HttpClient"/> gerada pelo proxy.</param>
+        /// <param name="proxy">Instância da classe <see cref="HttpClient"/> gerada pelo proxy.</param>
         public Recebiveis(HttpClient proxy)
             : base(proxy) { }
     }

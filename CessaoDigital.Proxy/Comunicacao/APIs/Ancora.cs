@@ -14,7 +14,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         /// <summary>
         /// Inicializa a API para Sacados Âncora.
         /// </summary>
-        /// /// <param name="proxy">Instância da classe <see cref="HttpClient"/> gerada pelo proxy.</param>
+        /// <param name="proxy">Instância da classe <see cref="HttpClient"/> gerada pelo proxy.</param>
         public Ancora(HttpClient proxy)
             : base(proxy) { }
 

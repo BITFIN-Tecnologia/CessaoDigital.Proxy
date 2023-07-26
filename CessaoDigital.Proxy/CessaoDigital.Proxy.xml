@@ -74,7 +74,7 @@
             <summary>
             Inicializa a API para Sacados Âncora.
             </summary>
-            /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+            <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
         </member>
         <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Adesoes(System.Threading.CancellationToken)">
             <summary>
@@ -166,7 +166,7 @@
             <summary>
             Inicializa a API para Instituições Financeiras.
             </summary>
-            /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+            <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
         </member>
         <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Contratacao(CessaoDigital.Proxy.DTOs.Contratacao,System.Threading.CancellationToken)">
             <summary>
@@ -245,9 +245,9 @@
         </member>
         <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis.#ctor(System.Net.Http.HttpClient)">
             <summary>
-            
+            Inicializa a API para Recebíveis.
             </summary>
-            /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+            <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">
             <summary>
