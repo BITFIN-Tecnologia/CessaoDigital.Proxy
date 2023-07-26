@@ -791,6 +791,71 @@
             Data do Status.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.DocumentoFiscal">
+            <summary>
+            Documento fiscal que dá lastro ao recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Tipo">
+            <summary>
+            Tipo de Documento (CTe, NFe e NFS).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.CodigoDeVerificacao">
+            <summary>
+            Código de verificação gerado pela Prefeitura ou pela Secretaria da Fazenda.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.DataDeCadastro">
+            <summary>
+            Data em que foi cadastrado o documento fiscal na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Status">
+            <summary>
+            Status de autorização (Interminado, Autorizado ou Cancelado).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.DataDoStatus">
+            <summary>
+            Data do status.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Eventos">
+            <summary>
+            Relação de eventos associados ao documento fiscal retornados pela SEFAZ.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Evento">
+            <summary>
+            Dados do evento gerado sobre o documento fiscal.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Evento.IdDoEvento">
+            <summary>
+            Identificar do evento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Evento.Titulo">
+            <summary>
+            Nome do evento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Evento.DataDeCadastro">
+            <summary>
+            Data de cadastro na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Evento.DataDoEvento">
+            <summary>
+            Data em que o evento foi gerado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.DocumentoFiscal.Evento.Complemento">
+            <summary>
+            Informação complementar e opcional.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Endereco">
             <summary>
             Informações de endereço.
@@ -1186,6 +1251,26 @@
             Indica se a mesma já foi antecipada.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Operacao">
+            <summary>
+            Dados da operação de antecipação de recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Operacao.Instituicao">
+            <summary>
+            Instituição que adquiriu o recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Operacao.Codigo">
+            <summary>
+            Código que identifica unicamente a operação dentro da Instituição.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Operacao.Data">
+            <summary>
+            Data em que a operação foi efetivada.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Paginacao">
             <summary>
             Dados da paginação.
@@ -1274,6 +1359,276 @@
         <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Paginador">
             <summary>
             Informações sobre a paginação da consulta.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Recebivel">
+            <summary>
+            Dados do recebível negociado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Contratante">
+            <summary>
+            Contratante da Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Operacao">
+            <summary>
+            Dados da operação onde o recebível foi cessionado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Cedente">
+            <summary>
+            Dados do cedente que negociou o recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Sacado">
+            <summary>
+            Dados do sacado/pagador do recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.SacadorAvalista">
+            <summary>
+            Informações do sacador/avalista do boleto para pagamento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Banco">
+            <summary>
+            Banco ou Instituição Financeira onde o recebível está registrado para cobrança.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Codigo">
+            <summary>
+            Código que identifica unicamente o recebível dentro da Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDeCadastro">
+            <summary>
+            Data em que o recebível foi cadastrado na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Numero">
+            <summary>
+            Número do recebível. Em geral, refere-se ou número da duplicata ou do boleto.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Especie">
+            <summary>
+            DM (Duplicata Mercantil) ou DS (Duplicata de Serviço).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDeEmissao">
+            <summary>
+            Data em que foi emitido o recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDeVencimento">
+            <summary>
+            Data de vencimento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDeVencimentoEfetiva">
+            <summary>
+            Data de vencimento efetiva (corrigindo fins de semana e/ou feriados (nacionais/estaduais/municipais)).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Protesto">
+            <summary>
+            Dados do Protesto.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDeNegativacao">
+            <summary>
+            Data em que o recebível foi negativado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Valor">
+            <summary>
+            Valor de face do recebível, limitado à R$ 100.000.000,00.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.ValorDeAbatimento">
+            <summary>
+            Valor de abatimento concedido para o recebível (incondicional).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.ValorLiquido">
+            <summary>
+            Valor líquido para pagamento (deduzido o valor do abatimento).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.ValorDePagamento">
+            <summary>
+            Valor total pago pelo recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Situacao">
+            <summary>
+            Situação do recebível (Em Aberto, Liquidado, Liquidado em Cartório, Baixado, Recomprado pelo Cedente ou Recomprado pelo Sacado).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDaSituacao">
+            <summary>
+            Data da situação em que encontra-se o recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.ManifestoDoSacado">
+            <summary>
+            Cedente Desconhecido, Operação Improcedente, Valor Divergente, Pedido Cancelado, Mercadoria em Trânsito, Entrega Atrasada, Entregue Parcialmente e Mercadoria Entregue.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDoManifestoDoSacado">
+            <summary>
+            Data da manifestação realizada pelo sacado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.UsoDaEmpresa">
+            <summary>
+            Campo livre que identifica unicamente o recebível para o contratante.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.AgenciaBancaria">
+            <summary>
+            Código da agência bancária (sem dígito) onde o recebível está registrado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.ContaBancaria">
+            <summary>
+            Número da conta bancária (com dígito) onde o recebível está registrado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.CarteiraBancaria">
+            <summary>
+            Número da carteira bancária onde o recebível está registrado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.ConvenioDeCobranca">
+            <summary>
+            Convênio gerado pelo Banco cobrador. Para alguns bancos, este informação é obrigatória para geração do boleto de pagamento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.StatusDeCobranca">
+            <summary>
+            Registrado ou Baixado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.NumeroBancario">
+            <summary>
+            Número bancário (nosso número) que o recebível foi registrado no Banco cobrador.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DigitoDoNumeroBancario">
+            <summary>
+            Dígito do número bancário.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Multa">
+            <summary>
+            Multa se pago vencido.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.JurosDeMora">
+            <summary>
+            Juros aplicado por dia de atraso no pagamento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.BonificacaoDiaria">
+            <summary>
+            Valor de bonificação por dia antecipado de pagamento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Tags">
+            <summary>
+            Tags de livre utilização pelo contratante; serão devolvidas em eventuais callbacks.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DataDeAtualizacao">
+            <summary>
+            Armazena a última data em que o recebível foi alterado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Descontos">
+            <summary>
+            Relação de descontos concedidos para o recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DocumentosFiscais">
+            <summary>
+            Documentos fiscais associados ao recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Mensagens">
+            <summary>
+            Mensagens que são estampadas no corpo do boleto de pagamento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Ocorrencias">
+            <summary>
+            Relação de ocorrências.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Recebivel.DadosDoProtesto">
+            <summary>
+            Informações sobre o protesto.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DadosDoProtesto.Cartorio">
+            <summary>
+            Número do cartório onde o protesto foi registrado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DadosDoProtesto.DataParaProtesto">
+            <summary>
+            Data em que o recebível será protestado se não for pago.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DadosDoProtesto.DataDeSustacao">
+            <summary>
+            Data em que ocorreu a sustação do protesto.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DadosDoProtesto.DataDeProtesto">
+            <summary>
+            Data em que ocorreu o protesto do recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.DadosDoProtesto.Protocolo">
+            <summary>
+            Número do protocolo gerado pelo cartório.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Recebivel.Desconto">
+            <summary>
+            Informação sobre descontos à conceder.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Desconto.Data">
+            <summary>
+            Data limite para desconto.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Desconto.Valor">
+            <summary>
+            Valor do desconto.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Recebivel.Ocorrencia">
+            <summary>
+            Eventos ocorridos sobre o recebível.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Ocorrencia.Tipo">
+            <summary>
+            Tipo da ocorrência.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Ocorrencia.Data">
+            <summary>
+            Data da ocorrência.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Recebivel.Ocorrencia.Mensagem">
+            <summary>
+            Mensagem complementar.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao">
