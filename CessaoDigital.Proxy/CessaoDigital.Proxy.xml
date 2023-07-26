@@ -65,6 +65,78 @@
             Mime type padrão.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Ancora">
+            <summary>
+            Conjuto de API's para gestão pelo Sacado Âncora através do produto Antecipação à Fornecedores.
+            </summary>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Inicializa a API para Sacados Âncora.
+            </summary>
+            /// <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Adesoes(System.Threading.CancellationToken)">
+            <summary>
+            Termos de Adesão.
+            </summary>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Relação de Entidades (Fornecedores) cadastradas que aderiram à Plataforma para Antecipação.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Credito(System.Threading.CancellationToken)">
+            <summary>
+            Linhas de Crédito.
+            </summary>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Relação das linhas de crédito utilizadas pela Plataforma para realizar as antecipações.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacoes(CessaoDigital.Proxy.DTOs.ParametrosDeBusca,System.Threading.CancellationToken)">
+            <summary>
+            Busca de Operações.
+            </summary>
+            <param name="parametros">Objeto contendo os parâmetros para busca e paginação.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Relação de operações que atendem os critérios de busca, incluindo informações para paginação dos resultados.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacoes(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Detalhes da Operação.
+            </summary>
+            <param name="codigo">Código da Antecipação.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Retorna todas as informações sobre uma determinada Operação.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.EnvioDeNFe(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Envio de uma única nota fiscal mercantil.
+            </summary>
+            <param name="xml">XML representando a nota fiscal mercantil.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns><see cref="T:System.Guid"/> representando a solicitação que foi enfileirada para processamento.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.EnvioDeNFe(System.Byte[],System.Threading.CancellationToken)">
+            <summary>
+            Envio de múltiplas notas fiscais mercantis.
+            </summary>
+            <param name="zip">Arquivo compactado com as respectivas notas fiscais em formato XML.</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns><see cref="T:System.Guid"/> representando a solicitação que foi enfileirada para processamento.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacoes(System.Collections.Generic.IEnumerable{CessaoDigital.Proxy.DTOs.AutorizacaoDeNFe},System.Threading.CancellationToken)">
+            <summary>
+            Autorização de NF-e.
+            </summary>
+            <param name="autorizacoes">Relação de Notas Fiscais</param>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Relação das notas fiscais informadas e seu respectivo status de autorização para antecipação.</returns>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
+        </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Financeiro">
             <summary>
             
@@ -427,6 +499,21 @@
             Valor líquido da parcela.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.AutorizacaoDeNFe">
+            <summary>
+            Autorização para antecipação da NF-e.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.AutorizacaoDeNFe.Danfe">
+            <summary>
+            Número do DANFE.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.AutorizacaoDeNFe.Status">
+            <summary>
+            Status de autorização para antecipação: Autorizada, Já Autorizada ou Não Localizada.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Banco">
             <summary>
             Dados do Banco.
@@ -530,6 +617,31 @@
         <member name="P:CessaoDigital.Proxy.DTOs.Contratante.Entidade">
             <summary>
             Informações sobre a entidade contratante.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Contrato">
+            <summary>
+            Informações referente à um determinado Contrato gerado pela Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contrato.Tipo">
+            <summary>
+            Tipo do Contrato (Exemplo: Plataforma para Sacados, Antecipação à Fornecedores, etc.).
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contrato.Codigo">
+            <summary>
+            Código que identifica unicamente o Contrato na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contrato.Data">
+            <summary>
+            Data de geração do Contrato.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Contrato.Formalizacao">
+            <summary>
+            Informações sobre a assinatura digital do Contrato.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.DocumentoDigital">
@@ -902,6 +1014,96 @@
             Indica se a mesma já foi antecipada.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Paginacao">
+            <summary>
+            Dados da paginação.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Paginacao.Registros">
+            <summary>
+            Quantidade de registros atingidos pela consulta.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Paginacao.Paginas">
+            <summary>
+            Total de páginas geradas.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Paginacao.RegistrosPorPagina">
+            <summary>
+            Quantidade de registros por página.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Paginacao.PaginaAtual">
+            <summary>
+            Página a qual o resultado se refere.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.ParametrosDeBusca">
+            <summary>
+            Parâmetros gerais para busca de informações.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DocumentoDaInstituicao">
+            <summary>
+            Documento (CNPJ/CPF) da Instituição.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DocumentoDoCedente">
+            <summary>
+            Documento (CNPJ/CPF) do cedente.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DocumentoDoSacado">
+            <summary>
+            Documento (CNPJ/CPF) do sacado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DataInicial">
+            <summary>
+            Data inicial do período.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DataFinal">
+            <summary>
+            Data final do período.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.BaseDaData">
+            <summary>
+            Emissao, Operacao, Cadastro, Vencimento ou Situacao.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Situacao">
+            <summary>
+            Em Aberto, Liquidado, Liquidado em Cartório, Baixado, Recomprado pelo Cedente ou Recomprado pelo Sacado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.CodigoDaOperacao">
+            <summary>
+            Código que identifica unicamente a operação dentro da Instituição.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.NumeroDoRecebivel">
+            <summary>
+            Número do recebível. Em geral, refere-se ou número da duplicata ou do boleto.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.UsoDaEmpresa">
+            <summary>
+            Campo livre que identifica unicamente o recebível para o contratante.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Tags">
+            <summary>
+            Tags de livre utilização pelo contratante.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Paginador">
+            <summary>
+            Informações sobre a paginação da consulta.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao">
             <summary>
             Reporte do andamento da operação na Instituição Financeira.
@@ -955,6 +1157,21 @@
         <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Mensagem">
             <summary>
             Mensagem customizada para justificar o status.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.TermoDeAdesao">
+            <summary>
+            Informações sobre a adesão à Plataforma para Antecipação à Fornecedores.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.TermoDeAdesao.Fornecedor">
+            <summary>
+            Fornecedor (pessoa física ou jurídica) aderente da Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.TermoDeAdesao.Contrato">
+            <summary>
+            Dados do termo que foi assinado.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.Logging.ILogger">
