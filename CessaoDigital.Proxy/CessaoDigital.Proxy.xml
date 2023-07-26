@@ -139,14 +139,23 @@
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Financeiro">
             <summary>
-            
+            Informações financeiras sobre a contratação do serviço.
             </summary>
         </member>
         <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Financeiro.#ctor(System.Net.Http.HttpClient)">
             <summary>
-            
+            Inicializa a API de informações financeiras.
             </summary>
             <param name="proxy">Instância da classe <see cref="T:System.Net.Http.HttpClient"/> gerada pelo proxy.</param>
+        </member>
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Financeiro.Fechamentos(System.Threading.CancellationToken)">
+            <summary>
+            Relação de Fechamentos.
+            </summary>
+            <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+            <returns>Relação de Fechamentos realizados.</returns>
+            <remarks>Fechamentos financeiros que resumem o consumo mensal do contratante.</remarks>
+            <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao">
             <summary>
@@ -772,6 +781,61 @@
         <member name="P:CessaoDigital.Proxy.DTOs.Falha.Link">
             <summary>
             Opcionalmente informa um endereço com informações complementares sobre a falha.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Fechamento">
+            <summary>
+            Fechamento financeiro.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.Contratante">
+            <summary>
+            Entidade contratante.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.Data">
+            <summary>
+            Data de apuração.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.Ano">
+            <summary>
+            Ano do período de apuração.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.Mes">
+            <summary>
+            Mês do período de apuração.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.Quantidade">
+            <summary>
+            Quantidade de recebíveis registrados no período.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.ValorUnitario">
+            <summary>
+            Valor unitário por registro da faixa atingida.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.ValorTotal">
+            <summary>
+            Valor total apurado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.DataDeVencimento">
+            <summary>
+            Data para pagamento da fatura.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.Status">
+            <summary>
+            Status de pagamento.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Fechamento.DataDoStatus">
+            <summary>
+            Data do status de pagamento.
             </summary>
         </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Fornecedor">
