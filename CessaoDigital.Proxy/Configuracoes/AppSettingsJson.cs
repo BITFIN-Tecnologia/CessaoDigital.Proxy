@@ -65,7 +65,7 @@ namespace CessaoDigital.Proxy.Configuracoes
 
         private static bool VerificarDuplicidades(IEnumerable<Conexao> conexoes, out Ambiente? ambiente)
         {
-            ambiente = conexoes.GroupBy(c => c.Ambiente).FirstOrDefault(c => c.Count() > 1)?.Key;
+            ambiente = conexoes.GroupBy(static c => c.Ambiente).FirstOrDefault(static c => c.Count() > 1)?.Key;
 
             return ambiente != null;
         }

@@ -355,7 +355,7 @@
         </member>
         <member name="P:CessaoDigital.Proxy.Conexao.Ambiente">
             <summary>
-            Ambiente, Sandbox, Produção ou Local.
+            Ambiente a qual a conexão se refere.
             </summary>
         </member>
         <member name="P:CessaoDigital.Proxy.Conexao.Versao">

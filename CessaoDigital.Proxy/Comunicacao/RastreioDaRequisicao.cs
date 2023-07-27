@@ -32,7 +32,7 @@ namespace CessaoDigital.Proxy.Comunicacao
                 Log(id, Severidade.Info, $"Request.Content-Type: {request.Content.Headers.ContentType?.MediaType}");
             }
 
-            Log(id, Severidade.Info, $"Request.Headers: {string.Join(";", request.Headers.OrderBy(h => h.Key).Select(h => $"{h.Key}={string.Join(",", h.Value)}"))}");
+            Log(id, Severidade.Info, $"Request.Headers: {string.Join(";", request.Headers.OrderBy(static h => h.Key).Select(static h => $"{h.Key}={string.Join(",", h.Value)}"))}");
 
             HttpResponseMessage resposta = null;
 
@@ -49,7 +49,7 @@ namespace CessaoDigital.Proxy.Comunicacao
             {
                 if (resposta != null)
                 {
-                    Log(id, Severidade.Info, $"Response.Headers: {string.Join(";", resposta.Headers.OrderBy(h => h.Key).Select(h => $"{h.Key}={string.Join(",", h.Value)}"))}");
+                    Log(id, Severidade.Info, $"Response.Headers: {string.Join(";", resposta.Headers.OrderBy(static h => h.Key).Select(static h => $"{h.Key}={string.Join(",", h.Value)}"))}");
 
                     Log(id, Severidade.Info, $"Response.StatusCode: {resposta.StatusCode}");
                     Log(id, Severidade.Info, $"Response.ReasonPhrase: {resposta.ReasonPhrase}");
