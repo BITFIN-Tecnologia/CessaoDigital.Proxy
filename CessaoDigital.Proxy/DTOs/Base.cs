@@ -6,7 +6,5 @@ namespace CessaoDigital.Proxy.DTOs
     /// <summary>
     /// Classe com recursos comuns para os DTOs.
     /// </summary>
-    public abstract class Base
-    {
-    }
+    public abstract class Base { }
 }

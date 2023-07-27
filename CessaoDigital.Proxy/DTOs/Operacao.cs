@@ -9,7 +9,7 @@ namespace CessaoDigital.Proxy.DTOs
     /// Dados da operação de antecipação de recebível.
     /// </summary>
     [DebuggerDisplay("{Instituicao,nq} - {Data} - Código: {Codigo,nq}")]
-    public class Operacao
+    public class Operacao : Base
     {
         /// <summary>
         /// Instituição que adquiriu o recebível.

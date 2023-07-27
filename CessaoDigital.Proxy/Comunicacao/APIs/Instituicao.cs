@@ -28,7 +28,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "instituicao/contratacao")
             {
-                Content = new StringContent(Serializador.Serializar(contratacao), Encoding.UTF8, this.MimeType.MediaType)
+                Content = new StringContent(Serializador.Serializar(contratacao), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
                 await Executar(requisicao, cancellationToken);
         }
@@ -44,7 +44,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "instituicao/credito")
             {
-                Content = new StringContent(Serializador.Serializar(credito), Encoding.UTF8, this.MimeType.MediaType)
+                Content = new StringContent(Serializador.Serializar(credito), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
                 await Executar(requisicao, cancellationToken);
         }
@@ -93,7 +93,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Patch, $"instituicao/fornecedores/{status.Codigo}/status")
             {
-                Content = new StringContent(Serializador.Serializar(status), Encoding.UTF8, this.MimeType.MediaType)
+                Content = new StringContent(Serializador.Serializar(status), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
                 await Executar(requisicao, cancellationToken);
         }
@@ -109,7 +109,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "instituicao/antecipacoes")
             {
-                Content = new StringContent(Serializador.Serializar(parametros), Encoding.UTF8, this.MimeType)
+                Content = new StringContent(Serializador.Serializar(parametros), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
             {
                 return await this.Executar(requisicao, async resposta =>
@@ -143,12 +143,13 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         /// <param name="codigo">Código da Antecipação.</param>
         /// <param name="status">Informações sobre o andamento da operação.</param>
         /// <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
+        /// <remarks>Permite à Instituição notificar a evolução da Operação.</remarks>
         /// <exception cref="ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         public async Task StatusDaAntecipacao(string codigo, DTOs.StatusDaAntecipacao status, CancellationToken cancellationToken = default)
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Patch, $"instituicao/antecipacoes/{codigo}/status")
             {
-                Content = new StringContent(Serializador.Serializar(status), Encoding.UTF8, this.MimeType.MediaType)
+                Content = new StringContent(Serializador.Serializar(status), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
                 await Executar(requisicao, cancellationToken);
         }

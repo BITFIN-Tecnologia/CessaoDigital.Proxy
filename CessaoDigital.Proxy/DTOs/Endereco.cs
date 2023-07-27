@@ -9,7 +9,7 @@ namespace CessaoDigital.Proxy.DTOs
     /// Informações de endereço.
     /// </summary>
     [DebuggerDisplay("{Cep,nq} - {Localidade,nq}/{Estado,nq}")]
-    public class Endereco
+    public class Endereco : Base
     {
         /// <summary>
         /// CEP do Logradouro ou Cidade.

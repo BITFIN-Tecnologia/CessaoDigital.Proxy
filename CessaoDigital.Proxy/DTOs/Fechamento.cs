@@ -9,7 +9,7 @@ namespace CessaoDigital.Proxy.DTOs
     /// Fechamento financeiro.
     /// </summary>
     [DebuggerDisplay("{Mes}/{Ano} - {Valor} - {Contratante,nq}")]
-    public class Fechamento
+    public class Fechamento : Base
     {
         /// <summary>
         /// Entidade contratante.

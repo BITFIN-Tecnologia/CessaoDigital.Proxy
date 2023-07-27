@@ -59,12 +59,12 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "ancora/antecipacoes")
             {
-                Content = new StringContent(Serializador.Serializar(parametros), Encoding.UTF8, this.MimeType)
+                Content = new StringContent(Serializador.Serializar(parametros), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
             {
                 return await this.Executar(requisicao, async resposta =>
                 {
-                    return await resposta.Content.ReadAs<DTOs.BuscaDeAntecipacoes> (cancellationToken);
+                    return await resposta.Content.ReadAs<DTOs.BuscaDeAntecipacoes>(cancellationToken);
                 }, cancellationToken);
             }
         }
@@ -98,7 +98,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "ancora/nfe")
             {
-                Content = new StringContent(xml, Encoding.UTF8, "application/xml")
+                Content = new StringContent(xml, Encoding.UTF8, Protocolo.MediaTypeXml)
             })
             {
                 return await this.Executar(requisicao, async resposta =>
@@ -124,7 +124,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
                 Content = new ByteArrayContent(zip)
             })
             {
-                requisicao.Content.Headers.ContentType = new("application/zip");
+                requisicao.Content.Headers.ContentType = Protocolo.MediaTypeZip;
 
                 return await this.Executar(requisicao, async resposta =>
                 {
@@ -146,7 +146,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "ancora/nfe/autorizacao")
             {
-                Content = new StringContent(Serializador.Serializar(autorizacoes), Encoding.UTF8, this.MimeType)
+                Content = new StringContent(Serializador.Serializar(autorizacoes), Encoding.UTF8, Protocolo.MediaTypeJson)
             })
             {
                 return await this.Executar(requisicao, async resposta =>

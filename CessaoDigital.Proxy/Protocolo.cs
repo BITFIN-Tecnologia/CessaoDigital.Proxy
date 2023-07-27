@@ -1,6 +1,8 @@
 ﻿// Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.
 // Código exclusivo para consumo dos serviços (API's) da Plataforma Cessão Digital.
 
+using System.Net.Http.Headers;
+
 namespace CessaoDigital.Proxy
 {
     /// <summary>
@@ -19,8 +21,18 @@ namespace CessaoDigital.Proxy
         public const string CodigoDeRastreio = "CD-Tracking";
 
         /// <summary>
-        /// Formato padrão de serialização das requisições e resposta.
+        /// Mime-type para JSON.
         /// </summary>
-        public const string MimeType = "application/json";
+        public static readonly MediaTypeHeaderValue MediaTypeJson = new("application/json");
+
+        /// <summary>
+        /// Mime-type para XML.
+        /// </summary>
+        public static readonly MediaTypeHeaderValue MediaTypeXml = new("application/xml");
+
+        /// <summary>
+        /// Mime-type para ZIP.
+        /// </summary>
+        public static readonly MediaTypeHeaderValue MediaTypeZip = new("application/zip");
     }
 }

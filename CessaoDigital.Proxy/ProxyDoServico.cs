@@ -46,8 +46,6 @@ namespace CessaoDigital.Proxy
                     Protocolo.ApiKey,
                     Convert.ToBase64String(Encoding.UTF8.GetBytes($"{conexao.CodigoDoContratante}:{conexao.ChaveDeIntegracao}")));
 
-            this.proxy.DefaultRequestHeaders.Add("Accept", Protocolo.MimeType);
-
             this.Ancora = new(proxy);
             this.Financeiro = new(proxy);
             this.Instituicao = new(proxy);

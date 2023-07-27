@@ -3,7 +3,6 @@
 
 using CessaoDigital.Proxy.Utilitarios;
 using System.Net;
-using System.Net.Http.Headers;
 
 namespace CessaoDigital.Proxy.Comunicacao
 {
@@ -21,11 +20,8 @@ namespace CessaoDigital.Proxy.Comunicacao
         /// Inicializa a API.
         /// </summary>
         /// <param name="proxy">Instância da classe <see cref="HttpClient"/> gerada pelo proxy.</param>
-        public API(HttpClient proxy)
-        {
+        public API(HttpClient proxy) =>
             this.proxy = proxy;
-            this.MimeType = new MediaTypeWithQualityHeaderValue(Protocolo.MimeType);
-        }
 
         /// <summary>
         /// Configura, envia e captura o retorno da requisição para um determinado serviço.
@@ -35,15 +31,13 @@ namespace CessaoDigital.Proxy.Comunicacao
         /// <exception cref="ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         protected virtual async Task Executar(HttpRequestMessage requisicao, CancellationToken cancellationToken = default)
         {
-            requisicao.Headers.Accept.Add(this.MimeType);
-
             using (var resposta = await this.proxy.SendAsync(requisicao, cancellationToken))
             {
                 try
                 {
                     resposta.EnsureSuccessStatusCode();
                 }
-                catch (HttpRequestException ex) when (ex.StatusCode is HttpStatusCode.BadRequest)
+                catch (HttpRequestException ex) when (ex.StatusCode is HttpStatusCode.BadRequest or HttpStatusCode.NotFound)
                 {
                     throw new ErroNaRequisicao(ex, await resposta.Content.ReadAs<DTOs.Falha>(cancellationToken));
                 }
@@ -61,8 +55,6 @@ namespace CessaoDigital.Proxy.Comunicacao
         /// <returns>Retorna o objeto do tipo <typeparamref name="T"/> pronto para utilização.</returns>
         protected virtual async Task<T> Executar<T>(HttpRequestMessage requisicao, Func<HttpResponseMessage, Task<T>> analiseDeRetorno, CancellationToken cancellationToken = default)
         {
-            requisicao.Headers.Accept.Add(this.MimeType);
-
             using (var resposta = await this.proxy.SendAsync(requisicao, cancellationToken))
             {
                 try
@@ -71,16 +63,11 @@ namespace CessaoDigital.Proxy.Comunicacao
 
                     return await analiseDeRetorno(resposta);
                 }
-                catch (HttpRequestException ex) when (ex.StatusCode is HttpStatusCode.BadRequest)
+                catch (HttpRequestException ex) when (ex.StatusCode is HttpStatusCode.BadRequest or HttpStatusCode.NotFound)
                 {
                     throw new ErroNaRequisicao(ex, await resposta.Content.ReadAs<DTOs.Falha>(cancellationToken));
                 }
             }
         }
-
-        /// <summary>
-        /// Mime type padrão.
-        /// </summary>
-        protected MediaTypeWithQualityHeaderValue MimeType { get; init; }
     }
 }
