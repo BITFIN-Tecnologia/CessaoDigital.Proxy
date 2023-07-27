@@ -45,7 +45,7 @@ namespace CessaoDigital.Proxy
         }
 
         /// <summary>
-        /// Ambiente, Sandbox, Produção ou Local.
+        /// Ambiente a qual a conexão se refere.
         /// </summary>
         public Ambiente Ambiente { get; private set; }
 
