@@ -21,6 +21,11 @@ namespace CessaoDigital.Proxy
         public const string CodigoDeRastreio = "CD-Tracking";
 
         /// <summary>
+        /// Indica ao que se refere a requisição.
+        /// </summary>
+        public const string Evento = "CD-Evento";
+
+        /// <summary>
         /// Mime-type para JSON.
         /// </summary>
         public static readonly MediaTypeHeaderValue MediaTypeJson = new("application/json");

@@ -2048,6 +2048,11 @@
             Chave para correlação de requisição e resposta.
             </summary>
         </member>
+        <member name="F:CessaoDigital.Proxy.Protocolo.Evento">
+            <summary>
+            Indica ao que se refere a requisição.
+            </summary>
+        </member>
         <member name="F:CessaoDigital.Proxy.Protocolo.MediaTypeJson">
             <summary>
             Mime-type para JSON.
