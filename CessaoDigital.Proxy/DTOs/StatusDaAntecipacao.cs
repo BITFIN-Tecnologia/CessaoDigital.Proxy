@@ -17,7 +17,7 @@ namespace CessaoDigital.Proxy.DTOs
         public string Status { get; set; }
 
         /// <summary>
-        /// Termo de Cessão, em formato P7S, codificado em Base64. Será exigido quando o status for "Financeiro".
+        /// Termo de Cessão, em formato PDF ou P7S, codificado em Base64. Será exigido quando o status for "Formalização".
         /// </summary>
         public string TermoDeCessao { get; set; }
 

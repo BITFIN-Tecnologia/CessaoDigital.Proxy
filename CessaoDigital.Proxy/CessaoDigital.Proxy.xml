@@ -777,6 +777,36 @@
             Registrado ou Baixado.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Constantes">
+            <summary>
+            Relação de constantes utilizadas pela biblioteca.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Constantes.StatusDaAntecipacao">
+            <summary>
+            Status de progresso da operação de antecipação.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.DTOs.Constantes.StatusDaAntecipacao.Formalizacao">
+            <summary>
+            A operação está aguardando a formalização pelas partes.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.DTOs.Constantes.StatusDaAntecipacao.Financeiro">
+            <summary>
+            A operação está aguardando o pagamento.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.DTOs.Constantes.StatusDaAntecipacao.Concluida">
+            <summary>
+            A operação foi concluída.
+            </summary>
+        </member>
+        <member name="F:CessaoDigital.Proxy.DTOs.Constantes.StatusDaAntecipacao.Rejeitada">
+            <summary>
+            A operação foi rejeitada.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.ContaBancaria">
             <summary>
             Dados da Conta bancária em Instituição Financeira.
@@ -1859,7 +1889,7 @@
         </member>
         <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.TermoDeCessao">
             <summary>
-            Termo de Cessão, em formato P7S, codificado em Base64. Será exigido quando o status for "Financeiro".
+            Termo de Cessão, em formato PDF ou P7S, codificado em Base64. Será exigido quando o status for "Formalização".
             </summary>
         </member>
         <member name="P:CessaoDigital.Proxy.DTOs.StatusDaAntecipacao.ComprovanteDePagamento">
