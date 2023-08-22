@@ -738,6 +738,32 @@
             Informações sobre a paginação do resultado.
             </summary>
         </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.Callback">
+            <summary>
+            Classe utilizada para recepcionar os callbacks gerados pela plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Callback.Evento">
+            <summary>
+            Descrição do evento ocorrido.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Callback.Complemento">
+            <summary>
+            Alguma informação complementar relevante para este evento.
+            </summary>
+            <remarks>Dependendo da complexidade do callback, esta propriedade pode retornar um objeto serializado para complementar a informação.</remarks>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Callback.Tags">
+            <summary>
+            Se a entidade que gerou o callback possuir tags associadas, elas serão informadas nesta propriedade.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.Callback.Data">
+            <summary>
+            Data em que o callback ocorreu.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.Chamado">
             <summary>
             Discussão entre sacado e Instituição.
