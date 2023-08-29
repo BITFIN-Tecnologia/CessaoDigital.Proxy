@@ -79,6 +79,8 @@ using (var log = new LogEmTexto(new StreamWriter("Log.txt", true)))
 
 > **Correlação com a Resposta:** Por fim, quando este código estiver presente na requisição, a Plataforma o devolverá, também, através do mesmo _header_ na resposta; com isso, a aplicação consumidora poderá realizar alguma consistência sobre ele, como correlacionar as mensagens, armazenamento de _logs_, etc.
 
+---
+
 > #### CONTATOS
 >
 > - Site: <https://cessaodigital.com.br>
