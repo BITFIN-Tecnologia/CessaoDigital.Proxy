@@ -164,7 +164,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         /// <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
         /// <returns>Informações sobre a situação atual do recebível.</returns>
         /// <exception cref="ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
-        public async Task<DTOs.BuscaDeRecebiveis> Buscar(DTOs.ParametrosDeBusca parametros, CancellationToken cancellationToken = default)
+        public async Task<DTOs.BuscaDeRecebiveis> Buscar(DTOs.ParametrosDeBuscaDeRecebiveis parametros, CancellationToken cancellationToken = default)
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Put, "recebiveis/busca")
             {

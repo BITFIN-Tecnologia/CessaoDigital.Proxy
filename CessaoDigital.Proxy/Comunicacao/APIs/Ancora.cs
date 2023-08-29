@@ -55,7 +55,7 @@ namespace CessaoDigital.Proxy.Comunicacao.APIs
         /// <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
         /// <returns>Relação de operações que atendem os critérios de busca, incluindo informações para paginação dos resultados.</returns>
         /// <exception cref="ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
-        public async Task<DTOs.BuscaDeAntecipacoes> Antecipacoes(DTOs.ParametrosDeBusca parametros, CancellationToken cancellationToken = default)
+        public async Task<DTOs.BuscaDeAntecipacoes> Antecipacoes(DTOs.ParametrosDeBuscaDeAntecipacoes parametros, CancellationToken cancellationToken = default)
         {
             using (var requisicao = new HttpRequestMessage(HttpMethod.Post, "ancora/antecipacoes")
             {

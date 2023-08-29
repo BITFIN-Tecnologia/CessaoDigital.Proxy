@@ -87,7 +87,7 @@
             <returns>Relação das linhas de crédito utilizadas pela Plataforma para realizar as antecipações.</returns>
             <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         </member>
-        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacoes(CessaoDigital.Proxy.DTOs.ParametrosDeBusca,System.Threading.CancellationToken)">
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Ancora.Antecipacoes(CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes,System.Threading.CancellationToken)">
             <summary>
             Busca de Operações.
             </summary>
@@ -206,7 +206,7 @@
             <param name="cancellationToken">Instrução para eventual cancelamento da requisição.</param>
             <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         </member>
-        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Antecipacoes(CessaoDigital.Proxy.DTOs.ParametrosDeBusca,System.Threading.CancellationToken)">
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Instituicao.Antecipacoes(CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes,System.Threading.CancellationToken)">
             <summary>
             Busca de Operações.
             </summary>
@@ -316,7 +316,7 @@
             <returns>Relação dos recebíveis adicionados na Plataforma para fins de conciliação e sincronismo com a base de dados do contratante.</returns>
             <exception cref="T:CessaoDigital.Proxy.Comunicacao.ErroNaRequisicao">Exceção disparada se alguma falha ocorrer durante a requisição ou em seu processamento.</exception>
         </member>
-        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis.Buscar(CessaoDigital.Proxy.DTOs.ParametrosDeBusca,System.Threading.CancellationToken)">
+        <member name="M:CessaoDigital.Proxy.Comunicacao.APIs.Recebiveis.Buscar(CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis,System.Threading.CancellationToken)">
             <summary>
             Busca de Recebíveis.
             </summary>
@@ -1534,67 +1534,97 @@
             Página a qual o resultado se refere.
             </summary>
         </member>
-        <member name="T:CessaoDigital.Proxy.DTOs.ParametrosDeBusca">
+        <member name="T:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes">
             <summary>
             Parâmetros gerais para busca de informações.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DocumentoDaInstituicao">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes.DocumentoDoFornecedor">
             <summary>
-            Documento (CNPJ/CPF) da Instituição.
+            Documento (CNPJ/CPF) do fornecedor.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DocumentoDoCedente">
-            <summary>
-            Documento (CNPJ/CPF) do cedente.
-            </summary>
-        </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DocumentoDoSacado">
-            <summary>
-            Documento (CNPJ/CPF) do sacado.
-            </summary>
-        </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DataInicial">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes.DataInicial">
             <summary>
             Data inicial do período.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.DataFinal">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes.DataFinal">
             <summary>
             Data final do período.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.BaseDaData">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes.BaseDaData">
+            <summary>
+            Cadastro ou Status.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeAntecipacoes.Paginador">
+            <summary>
+            Informações sobre a paginação da consulta.
+            </summary>
+        </member>
+        <member name="T:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis">
+            <summary>
+            Parâmetros gerais para busca de informações.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.DocumentoDaInstituicao">
+            <summary>
+            Documento (CNPJ/CPF) da Instituição.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.DocumentoDoCedente">
+            <summary>
+            Documento (CNPJ/CPF) do cedente.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.DocumentoDoSacado">
+            <summary>
+            Documento (CNPJ/CPF) do sacado.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.DataInicial">
+            <summary>
+            Data inicial do período.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.DataFinal">
+            <summary>
+            Data final do período.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.BaseDaData">
             <summary>
             Emissao, Operacao, Cadastro, Vencimento ou Situacao.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Situacao">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.Situacao">
             <summary>
             Em Aberto, Liquidado, Liquidado em Cartório, Baixado, Recomprado pelo Cedente ou Recomprado pelo Sacado.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.CodigoDaOperacao">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.CodigoDaOperacao">
             <summary>
             Código que identifica unicamente a operação dentro da Instituição.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.NumeroDoRecebivel">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.NumeroDoRecebivel">
             <summary>
             Número do recebível. Em geral, refere-se ou número da duplicata ou do boleto.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.UsoDaEmpresa">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.UsoDaEmpresa">
             <summary>
             Campo livre que identifica unicamente o recebível para o contratante.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Tags">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.Tags">
             <summary>
             Tags de livre utilização pelo contratante.
             </summary>
         </member>
-        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBusca.Paginador">
+        <member name="P:CessaoDigital.Proxy.DTOs.ParametrosDeBuscaDeRecebiveis.Paginador">
             <summary>
             Informações sobre a paginação da consulta.
             </summary>

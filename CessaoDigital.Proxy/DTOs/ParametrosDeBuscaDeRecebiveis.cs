@@ -6,7 +6,7 @@ namespace CessaoDigital.Proxy.DTOs
     /// <summary>
     /// Parâmetros gerais para busca de informações.
     /// </summary>
-    public class ParametrosDeBusca
+    public class ParametrosDeBuscaDeRecebiveis
     {
         /// <summary>
         /// Documento (CNPJ/CPF) da Instituição.
