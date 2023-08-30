@@ -25,5 +25,10 @@ namespace CessaoDigital.Proxy.DTOs
         /// Mensagem customizada para justificar o status.
         /// </summary>
         public string Mensagem { get; set; }
+
+        /// <summary>
+        /// Permite customizar um limite de operações para o fornecedor.
+        /// </summary>
+        public decimal? Limite { get; set; }
     }
 }

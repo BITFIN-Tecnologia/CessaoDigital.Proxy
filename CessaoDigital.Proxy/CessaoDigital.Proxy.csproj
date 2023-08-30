@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Projetos\BITFIN\CessaoDigital.Proxy\CessaoDigital.Proxy\CessaoDigital.Proxy.xml</DocumentationFile>
     <PackageId>BITFIN.CessaoDigital.Proxy</PackageId>
-    <Version>0.8.0.4</Version>
+    <Version>0.8.0.5</Version>
     <Authors>BITFIN Software Ltda.</Authors>
     <Company>BITFIN Software Ltda.</Company>
     <Copyright>Copyright 2023</Copyright>
@@ -19,7 +19,7 @@
     <Description>Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Cessão Digital, intermediando a comunicação do Portal para Sacados e Antecipação para Fornecedores.</Description>
     <PackageIcon>Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageReleaseNotes>DTO para busca de antecipações.</PackageReleaseNotes>
+    <PackageReleaseNotes>Inclusão de opção para editar o limite ao alterar o fornecedor pela instituição.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

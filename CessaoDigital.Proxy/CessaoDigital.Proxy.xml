@@ -2014,6 +2014,11 @@
             Mensagem customizada para justificar o status.
             </summary>
         </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Limite">
+            <summary>
+            Permite customizar um limite de operações para o fornecedor.
+            </summary>
+        </member>
         <member name="T:CessaoDigital.Proxy.DTOs.TermoDeAdesao">
             <summary>
             Informações sobre a adesão à Plataforma para Antecipação à Fornecedores.
