@@ -4,6 +4,8 @@ Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Ce
 
 Além da comunicação que já está embutida, a biblioteca também oferece recursos para _logging_, correlação de requisições e classes de DTOs (que também são definidas pelas API's). Isso garantirá uma experiência diferenciada para consumo dos serviços, já que o _proxy_ expõe em sua _interface_ pública, métodos e propriedades que refletem o negócio.
 
+A integração pode (e deve) ser utilizada tanto pelo Sacado Âncora quanto pelas Instituições Financeiras. Integrar as API's ao sistema (ERP) do Sacado Âncora, permitirá a ele ter mais controle sobre quando deverá enviar os documentos fiscais para antecipação, além do que poderá ter um controle bem mais refinado das operações que são realizadas pela Plataforma. Já da perspectiva das Instituições Financeiras, a integração se faz necessária para que tanto a adesão quanto as operações tenham um processo fluido e transparente para os fornecedores.
+
 > Documentação das API's: [https://cessaodigital.com.br/integracao](https://cessaodigital.com.br/integracao)
 
 > NUGET: [PM> Install-Package BITFIN.CessaoDigital.Proxy](https://www.nuget.org/packages/BITFIN.CessaoDigital.Proxy)
