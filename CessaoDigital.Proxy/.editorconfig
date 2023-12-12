@@ -9,7 +9,7 @@ indent_style = space
 indent_size = 2
 
 [*.cs]
-file_header_template = Copyright (c) 2023 - BITFIN Software Ltda. Todos os Direitos Reservados.\nCódigo exclusivo para consumo dos serviços (API's) da Plataforma Cessão Digital.
+file_header_template = Copyright (c) 2023 - BITFIN Tecnologia Ltda. Todos os Direitos Reservados.\nCódigo exclusivo para consumo dos serviços (API's) da Plataforma Cessão Digital.
 csharp_indent_labels = one_less_than_current
 csharp_using_directive_placement = outside_namespace:silent
 csharp_prefer_simple_using_statement = true:suggestion
