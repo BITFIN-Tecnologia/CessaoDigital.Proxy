@@ -49,7 +49,6 @@ namespace CessaoDigital.Proxy
             this.Ancora = new(proxy);
             this.Financeiro = new(proxy);
             this.Instituicao = new(proxy);
-            this.Recebiveis = new(proxy);
         }
 
         /// <summary>
@@ -58,24 +57,19 @@ namespace CessaoDigital.Proxy
         public Conexao Conexao { get; }
 
         /// <summary>
-        /// 
+        /// Conjuto de API's para gestão pelo Sacado Âncora através do produto Antecipação à Fornecedores.
         /// </summary>
         public Ancora Ancora { get; }
 
         /// <summary>
-        /// 
+        /// Informações financeiras sobre a contratação do serviço.
         /// </summary>
         public Financeiro Financeiro { get; }
 
         /// <summary>
-        /// 
+        /// Conjuto de API's para gestão pela Instituição Financeira através do produto Antecipação à Fornecedores.
         /// </summary>
         public Instituicao Instituicao { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Recebiveis Recebiveis { get; }
 
         /// <summary>
         /// Encerra e remove os recursos de comunicação utilizados por esta classe.
