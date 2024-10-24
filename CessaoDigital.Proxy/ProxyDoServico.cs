@@ -52,7 +52,7 @@ namespace CessaoDigital.Proxy
         }
 
         /// <summary>
-        /// Dados de conexão com um dos <see cref="Ambiente"/>s disponíveis.
+        /// Dados da conexão que foi estabelecida.
         /// </summary>
         public Conexao Conexao { get; }
 

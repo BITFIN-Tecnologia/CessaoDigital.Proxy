@@ -4,27 +4,6 @@
         <name>CessaoDigital.Proxy</name>
     </assembly>
     <members>
-        <member name="T:CessaoDigital.Proxy.Ambiente">
-            <summary>
-            Tipos de ambientes disponíveis para consumo dos serviços.
-            </summary>
-        </member>
-        <member name="F:CessaoDigital.Proxy.Ambiente.Sandbox">
-            <summary>
-            Ambiente destinado exclusivamente para testes de implementação e integração.
-            </summary>
-            <remarks>O ambiente de Sandbox é um "espelho" do ambiente de Produção, com exceção de que as assinaturas realizadas não são efetivamente válidas.</remarks>
-        </member>
-        <member name="F:CessaoDigital.Proxy.Ambiente.Producao">
-            <summary>
-            Esta opção indica que as requisições serão encaminhadas para ambiente de Produção, e estarão sujeitas à cobrança e aos encargos do plano contratado.
-            </summary>
-        </member>
-        <member name="F:CessaoDigital.Proxy.Ambiente.Local">
-            <summary>
-            Utilizado quando a solução está hospedada localmente (on-premises).
-            </summary>
-        </member>
         <member name="T:CessaoDigital.Proxy.Comunicacao.API">
             <summary>
             Classe base que define os recursos necessários para comunicação com a API remota.
@@ -251,20 +230,21 @@
             Informações necessárias para iniciar a comunicação com o serviço.
             </summary>
         </member>
-        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(CessaoDigital.Proxy.Ambiente,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
+        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(System.String,System.String,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
             <summary>
-            Inicializa a conexão com o mínimo necessário para estabelecer a comunicação com um determinado <see cref="T:CessaoDigital.Proxy.Ambiente"/>.
+            Inicializa a conexão através da URL de produção onde a Plataforma está hospedada.
             </summary>
-            <param name="ambiente">Ambiente de testes (Sandbox), produção ou local.</param>
+            <param name="nome">Nome que identifica unicamente a Conexão.</param>
+            <param name="url">Endereço absoluto da Plataforma.</param>
             <param name="versao">Versão da API que deve ser utilizada.</param>
             <param name="codigoDoContratante">Código exclusivo do contratante.</param>
             <param name="chaveDeIntegracao">Chave de integração da Aplicação.</param>
             <param name="timeout">Define o tempo máximo de espera permitido para executar uma requisição. O tempo padrão é de 100 segundos.</param>
             <exception cref="T:System.ArgumentException">Se o <paramref name="codigoDoContratante"/> ou o <paramref name="chaveDeIntegracao"/> forem <see cref="F:System.Guid.Empty"/> ou se a <paramref name="versao"/> for vazia.</exception>
         </member>
-        <member name="P:CessaoDigital.Proxy.Conexao.Ambiente">
+        <member name="P:CessaoDigital.Proxy.Conexao.Nome">
             <summary>
-            Ambiente a qual a conexão se refere.
+            Nome que identifica unicamente a Conexão.
             </summary>
         </member>
         <member name="P:CessaoDigital.Proxy.Conexao.Versao">
@@ -289,7 +269,7 @@
         </member>
         <member name="P:CessaoDigital.Proxy.Conexao.Url">
             <summary>
-            Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="P:CessaoDigital.Proxy.Conexao.Ambiente"/>.
+            Endereço base (HTTP) onde as API's estão hospedadas.
             </summary>
         </member>
         <member name="M:CessaoDigital.Proxy.Conexao.GerarCabecalho(System.Boolean)">
@@ -312,17 +292,19 @@
              <code>
             {
               "CessaoDigital.Proxy": {
-                "ConexaoPadrao": "Producao",
+                "ConexaoPadrao": "Sacado1",
                 "Conexoes": [
                   {
-                    "Ambiente": "Sandbox",
+                    "Nome": "Sacado1",
+                    "Url": "https://sacado1.cessaodigital.com.br",
                     "Versao": "v1",
                     "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
                     "ChaveDeIntegracao": "TWpZd00yTXpPVGN...zWkRVM01qTmhNR0Zq",
                     "Timeout": "00:00:10"
                   },
                   {
-                    "Ambiente": "Producao",
+                    "Nome": "Sacado2",
+                    "Url": "https://sacado2.cessaodigital.com.br",
                     "Versao": "v1",
                     "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
                     "ChaveDeIntegracao": "zWkRVM01qTmhNR0Zq...TWpZd00yTXpPVGN",
@@ -346,8 +328,10 @@
             <example>
             <code>
             <appSettings>
-                <add key="CessaoDigital.Proxy.Conexao.Ambiente"
-                        value="Sandbox" />
+                <add key="CessaoDigital.Proxy.Conexao.Nome"
+                        value="Sacado1" />
+                <add key="CessaoDigital.Proxy.Conexao.Url"
+                        value="https://sacado1.cessaodigital.com.br" />
                 <add key="CessaoDigital.Proxy.Conexao.Versao"
                         value="v1" />
                 <add key="CessaoDigital.Proxy.Conexao.CodigoDoContratante"
@@ -365,12 +349,12 @@
             Base para arquivos de configuração.
             </summary>
         </member>
-        <member name="M:CessaoDigital.Proxy.Configuracoes.Configuracao.Conexao(CessaoDigital.Proxy.Ambiente)">
+        <member name="M:CessaoDigital.Proxy.Configuracoes.Configuracao.Conexao(System.String)">
             <summary>
-            Retorna a conexão correspondente à um determinado (<see cref="T:CessaoDigital.Proxy.Ambiente"/>).
+            Retorna a conexão correspondente ao nome informado.
             </summary>
-            <param name="ambiente">Ambiente para conexão.</param>
-            <returns>Objeto <see cref="T:CessaoDigital.Proxy.Conexao"/> correspodente. Nulo será retornado se não houver uma conexão com o ambiente.</returns>
+            <param name="nome">Nome da conexão.</param>
+            <returns>Objeto <see cref="T:CessaoDigital.Proxy.Conexao"/> correspodente. Nulo será retornado se não houver a conexão com o nome.</returns>
         </member>
         <member name="P:CessaoDigital.Proxy.Configuracoes.Configuracao.Conexoes">
             <summary>
@@ -1611,7 +1595,7 @@
         </member>
         <member name="P:CessaoDigital.Proxy.ProxyDoServico.Conexao">
             <summary>
-            Dados de conexão com um dos <see cref="T:CessaoDigital.Proxy.Ambiente"/>s disponíveis.
+            Dados da conexão que foi estabelecida.
             </summary>
         </member>
         <member name="P:CessaoDigital.Proxy.ProxyDoServico.Ancora">

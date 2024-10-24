@@ -9,12 +9,12 @@ namespace CessaoDigital.Proxy.Configuracoes
     public abstract class Configuracao
     {
         /// <summary>
-        /// Retorna a conexão correspondente à um determinado (<see cref="Ambiente"/>).
+        /// Retorna a conexão correspondente ao nome informado.
         /// </summary>
-        /// <param name="ambiente">Ambiente para conexão.</param>
-        /// <returns>Objeto <see cref="Proxy.Conexao"/> correspodente. Nulo será retornado se não houver uma conexão com o ambiente.</returns>
-        public Conexao Conexao(Ambiente ambiente) =>
-            this.Conexoes?.FirstOrDefault(c => c.Ambiente == ambiente);
+        /// <param name="nome">Nome da conexão.</param>
+        /// <returns>Objeto <see cref="Proxy.Conexao"/> correspodente. Nulo será retornado se não houver a conexão com o nome.</returns>
+        public Conexao Conexao(string nome) =>
+            this.Conexoes?.FirstOrDefault(c => string.Compare(this.ConexaoPadrao, nome, true) == 0);
 
         /// <summary>
         /// Relação de conexões configuradas.
@@ -24,6 +24,6 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// <summary>
         /// Indica qual conexão será utilizada por padrão.
         /// </summary>
-        public Ambiente ConexaoPadrao { get; protected set; }
+        public string ConexaoPadrao { get; protected set; }
     }
 }

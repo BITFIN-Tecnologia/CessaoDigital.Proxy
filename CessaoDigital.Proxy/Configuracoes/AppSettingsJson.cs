@@ -17,17 +17,19 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// <code>
         ///{
         ///  "CessaoDigital.Proxy": {
-        ///    "ConexaoPadrao": "Producao",
+        ///    "ConexaoPadrao": "Sacado1",
         ///    "Conexoes": [
         ///      {
-        ///        "Ambiente": "Sandbox",
+        ///        "Nome": "Sacado1",
+        ///        "Url": "https://sacado1.cessaodigital.com.br",
         ///        "Versao": "v1",
         ///        "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
         ///        "ChaveDeIntegracao": "TWpZd00yTXpPVGN...zWkRVM01qTmhNR0Zq",
         ///        "Timeout": "00:00:10"
         ///      },
         ///      {
-        ///        "Ambiente": "Producao",
+        ///        "Nome": "Sacado2",
+        ///        "Url": "https://sacado2.cessaodigital.com.br",
         ///        "Versao": "v1",
         ///        "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
         ///        "ChaveDeIntegracao": "zWkRVM01qTmhNR0Zq...TWpZd00yTXpPVGN",
@@ -50,24 +52,25 @@ namespace CessaoDigital.Proxy.Configuracoes
             var conexoes =
                 from c in config.GetSection("CessaoDigital.Proxy:Conexoes").GetChildren()
                 select new Conexao(
-                    Enum.Parse<Ambiente>(c["Ambiente"]),
+                    c["Nome"],
+                    c["Url"],
                     c["Versao"],
                     Guid.Parse(c["CodigoDoContratante"]),
                     c["ChaveDeIntegracao"],
                     TimeSpan.Parse(c["Timeout"]));
 
-            if (VerificarDuplicidades(conexoes, out var ambiente))
-                throw new InvalidOperationException($"Existem duas ou mais conexões com o ambiente \"{ambiente}\".");
+            if (VerificarDuplicidades(conexoes, out var nome))
+                throw new InvalidOperationException($"Existem duas ou mais conexões com o nome \"{nome}\".");
 
             this.Conexoes = conexoes;
-            this.ConexaoPadrao = Enum.Parse<Ambiente>(config.GetSection("CessaoDigital.Proxy")["ConexaoPadrao"]);
+            this.ConexaoPadrao = config.GetSection("CessaoDigital.Proxy")["ConexaoPadrao"];
         }
 
-        private static bool VerificarDuplicidades(IEnumerable<Conexao> conexoes, out Ambiente? ambiente)
+        private static bool VerificarDuplicidades(IEnumerable<Conexao> conexoes, out string nome)
         {
-            ambiente = conexoes.GroupBy(static c => c.Ambiente).FirstOrDefault(static c => c.Count() > 1)?.Key;
+            nome = conexoes.GroupBy(static c => c.Nome).FirstOrDefault(static c => c.Count() > 1)?.Key;
 
-            return ambiente != null;
+            return nome != null;
         }
     }
 }

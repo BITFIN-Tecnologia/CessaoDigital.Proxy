@@ -16,8 +16,10 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// <example>
         /// <code>
         /// <appSettings>
-        ///     <add key="CessaoDigital.Proxy.Conexao.Ambiente"
-        ///             value="Sandbox" />
+        ///     <add key="CessaoDigital.Proxy.Conexao.Nome"
+        ///             value="Sacado1" />
+        ///     <add key="CessaoDigital.Proxy.Conexao.Url"
+        ///             value="https://sacado1.cessaodigital.com.br" />
         ///     <add key="CessaoDigital.Proxy.Conexao.Versao"
         ///             value="v1" />
         ///     <add key="CessaoDigital.Proxy.Conexao.CodigoDoContratante"
@@ -33,15 +35,16 @@ namespace CessaoDigital.Proxy.Configuracoes
         {
             var config = SCfg.ConfigurationManager.AppSettings;
 
-            this.Conexoes = new[]
-            {
+            this.Conexoes =
+            [
                 new Conexao(
-                    Enum.Parse<Ambiente>(config["CessaoDigital.Proxy.Conexao.Ambiente"]),
+                    config["CessaoDigital.Proxy.Conexao.Nome"],
+                    config["CessaoDigital.Proxy.Conexao.Url"],
                     config["CessaoDigital.Proxy.Conexao.Versao"],
                     Guid.Parse(config["CessaoDigital.Proxy.Conexao.CodigoDoContratante"]),
                     config["CessaoDigital.Proxy.Conexao.ChaveDeIntegracao"],
                     TimeSpan.Parse(config["CessaoDigital.Proxy.Conexao.Timeout"]))
-            };
+            ];
         }
     }
 }

@@ -9,27 +9,27 @@ namespace CessaoDigital.Proxy
     /// <summary>
     /// Informações necessárias para iniciar a comunicação com o serviço.
     /// </summary>
-    [DebuggerDisplay("{Ambiente}")]
+    [DebuggerDisplay("{Nome,nq}")]
     public class Conexao
     {
-        private static readonly Dictionary<Ambiente, string> apis = new(3)
-        {
-            { Ambiente.Sandbox, "https://sandbox.cessaodigital.com.br/api/{0}/" },
-            { Ambiente.Producao, "https://cessaodigital.com.br/api/{0}/" },
-            { Ambiente.Local, "https://localhost:44312/api/{0}/" }
-        };
-
         /// <summary>
-        /// Inicializa a conexão com o mínimo necessário para estabelecer a comunicação com um determinado <see cref="Proxy.Ambiente"/>.
+        /// Inicializa a conexão através da URL de produção onde a Plataforma está hospedada.
         /// </summary>
-        /// <param name="ambiente">Ambiente de testes (Sandbox), produção ou local.</param>
+        /// <param name="nome">Nome que identifica unicamente a Conexão.</param>
+        /// <param name="url">Endereço absoluto da Plataforma.</param>
         /// <param name="versao">Versão da API que deve ser utilizada.</param>
         /// <param name="codigoDoContratante">Código exclusivo do contratante.</param>
         /// <param name="chaveDeIntegracao">Chave de integração da Aplicação.</param>
         /// <param name="timeout">Define o tempo máximo de espera permitido para executar uma requisição. O tempo padrão é de 100 segundos.</param>
         /// <exception cref="ArgumentException">Se o <paramref name="codigoDoContratante"/> ou o <paramref name="chaveDeIntegracao"/> forem <see cref="Guid.Empty"/> ou se a <paramref name="versao"/> for vazia.</exception>
-        public Conexao(Ambiente ambiente, string versao, Guid codigoDoContratante, string chaveDeIntegracao, TimeSpan? timeout = null)
+        public Conexao(string nome, string url, string versao, Guid codigoDoContratante, string chaveDeIntegracao, TimeSpan? timeout = null)
         {
+            this.Nome =
+                !string.IsNullOrWhiteSpace(nome) ? nome : throw new ArgumentException("O nome da aplicação não foi informada.", nameof(nome));
+
+            this.Url =
+                !string.IsNullOrWhiteSpace(url) && Uri.TryCreate(url, UriKind.Absolute, out var u) ? new(string.Format(u.ToString(), this.Versao)) : throw new ArgumentException("A URL está inválida.", nameof(url));
+
             this.Versao = !string.IsNullOrWhiteSpace(versao) ? versao : throw new ArgumentException("Versão não informada.", nameof(versao));
 
             this.CodigoDoContratante =
@@ -39,15 +39,12 @@ namespace CessaoDigital.Proxy
                 !string.IsNullOrWhiteSpace(chaveDeIntegracao) ? chaveDeIntegracao : throw new ArgumentException("Chave de integração não informada.", nameof(chaveDeIntegracao));
 
             this.Timeout = timeout ?? TimeSpan.FromSeconds(100);
-
-            this.Ambiente = ambiente;
-            this.Url = new(string.Format(apis[ambiente], this.Versao));
         }
 
         /// <summary>
-        /// Ambiente a qual a conexão se refere.
+        /// Nome que identifica unicamente a Conexão.
         /// </summary>
-        public Ambiente Ambiente { get; private set; }
+        public string Nome { get; private set; }
 
         /// <summary>
         /// Versão da API.
@@ -70,7 +67,7 @@ namespace CessaoDigital.Proxy
         public TimeSpan Timeout { get; private set; }
 
         /// <summary>
-        /// Endereço base (HTTP) onde as API's estão hospedadas, que varia de acordo com o <see cref="Ambiente"/>.
+        /// Endereço base (HTTP) onde as API's estão hospedadas.
         /// </summary>
         public Uri Url { get; private set; }
 
