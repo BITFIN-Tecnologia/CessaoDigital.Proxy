@@ -78,7 +78,7 @@ namespace CessaoDigital.Proxy
         /// <returns><see cref="String"/> representando a respectiva conexão.</returns>
         public string GerarCabecalho(bool comLabel = true) =>
             comLabel ?
-                $"Autorization:{Protocolo.ApiKey} {$"{this.CodigoDoContratante}:{this.ChaveDeIntegracao}".EmBase64()}" :
+                $"Authorization:{Protocolo.ApiKey} {$"{this.CodigoDoContratante}:{this.ChaveDeIntegracao}".EmBase64()}" :
                 $"{$"{this.CodigoDoContratante}:{this.ChaveDeIntegracao}".EmBase64()}";
     }
 }
