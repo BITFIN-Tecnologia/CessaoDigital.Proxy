@@ -62,6 +62,11 @@ namespace CessaoDigital.Proxy.DTOs
         public decimal Tac { get; set; }
 
         /// <summary>
+        /// Quantidade de dias para ser acrescido ao prazo.
+        /// </summary>
+        public decimal Floating { get; set; }
+
+        /// <summary>
         /// Tarifa de TED/PIX.
         /// </summary>
         public decimal TarifaDePagamento { get; set; }

@@ -1102,6 +1102,11 @@
             Tarifa por operação.
             </summary>
         </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.Floating">
+            <summary>
+            Quantidade de dias para ser acrescido ao prazo.
+            </summary>
+        </member>
         <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TarifaDePagamento">
             <summary>
             Tarifa de TED/PIX.
