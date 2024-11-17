@@ -17,10 +17,11 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// <code>
         ///{
         ///  "CessaoDigital.Proxy": {
-        ///    "ConexaoPadrao": "Sacado1",
+        ///    "ConexaoPadrao": "ID123",
         ///    "Conexoes": [
         ///      {
-        ///        "Nome": "Sacado1",
+        ///        "Nome": "ID123",
+        ///        "Descricao": "Nome do Sacado 1",
         ///        "Url": "https://sacado1.cessaodigital.com.br",
         ///        "Versao": "v1",
         ///        "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
@@ -28,7 +29,8 @@ namespace CessaoDigital.Proxy.Configuracoes
         ///        "Timeout": "00:00:10"
         ///      },
         ///      {
-        ///        "Nome": "Sacado2",
+        ///        "Nome": "ID456",
+        ///        "Descricao": "Nome do Sacado 2",
         ///        "Url": "https://sacado2.cessaodigital.com.br",
         ///        "Versao": "v1",
         ///        "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
@@ -53,6 +55,7 @@ namespace CessaoDigital.Proxy.Configuracoes
                 from c in config.GetSection("CessaoDigital.Proxy:Conexoes").GetChildren()
                 select new Conexao(
                     c["Nome"],
+                    c["Descricao"],
                     c["Url"],
                     c["Versao"],
                     Guid.Parse(c["CodigoDoContratante"]),

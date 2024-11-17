@@ -17,7 +17,9 @@ namespace CessaoDigital.Proxy.Configuracoes
         /// <code>
         /// <appSettings>
         ///     <add key="CessaoDigital.Proxy.Conexao.Nome"
-        ///             value="Sacado1" />
+        ///             value="ID123" />
+        ///     <add key="CessaoDigital.Proxy.Conexao.Descricao"
+        ///             value="Nome do Sacado" />
         ///     <add key="CessaoDigital.Proxy.Conexao.Url"
         ///             value="https://sacado1.cessaodigital.com.br" />
         ///     <add key="CessaoDigital.Proxy.Conexao.Versao"
@@ -39,6 +41,7 @@ namespace CessaoDigital.Proxy.Configuracoes
             [
                 new Conexao(
                     config["CessaoDigital.Proxy.Conexao.Nome"],
+                    config["CessaoDigital.Proxy.Conexao.Descricao"],
                     config["CessaoDigital.Proxy.Conexao.Url"],
                     config["CessaoDigital.Proxy.Conexao.Versao"],
                     Guid.Parse(config["CessaoDigital.Proxy.Conexao.CodigoDoContratante"]),

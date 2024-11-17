@@ -230,11 +230,12 @@
             Informações necessárias para iniciar a comunicação com o serviço.
             </summary>
         </member>
-        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(System.String,System.String,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
+        <member name="M:CessaoDigital.Proxy.Conexao.#ctor(System.String,System.String,System.String,System.String,System.Guid,System.String,System.Nullable{System.TimeSpan})">
             <summary>
             Inicializa a conexão através da URL de produção onde a Plataforma está hospedada.
             </summary>
             <param name="nome">Nome que identifica unicamente a Conexão.</param>
+            <param name="descricao">Descrição amigável da Conexão.</param>
             <param name="url">Endereço absoluto da Plataforma.</param>
             <param name="versao">Versão da API que deve ser utilizada.</param>
             <param name="codigoDoContratante">Código exclusivo do contratante.</param>
@@ -245,6 +246,11 @@
         <member name="P:CessaoDigital.Proxy.Conexao.Nome">
             <summary>
             Nome que identifica unicamente a Conexão.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.Conexao.Descricao">
+            <summary>
+            Descrição amigável da Conexão.
             </summary>
         </member>
         <member name="P:CessaoDigital.Proxy.Conexao.Versao">
@@ -292,10 +298,11 @@
              <code>
             {
               "CessaoDigital.Proxy": {
-                "ConexaoPadrao": "Sacado1",
+                "ConexaoPadrao": "ID123",
                 "Conexoes": [
                   {
-                    "Nome": "Sacado1",
+                    "Nome": "ID123",
+                    "Descricao": "Nome do Sacado 1",
                     "Url": "https://sacado1.cessaodigital.com.br",
                     "Versao": "v1",
                     "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
@@ -303,7 +310,8 @@
                     "Timeout": "00:00:10"
                   },
                   {
-                    "Nome": "Sacado2",
+                    "Nome": "ID456",
+                    "Descricao": "Nome do Sacado 2",
                     "Url": "https://sacado2.cessaodigital.com.br",
                     "Versao": "v1",
                     "CodigoDoContratante": "985e0702-e94a-4954-b7a8-1f28c73c8122",
@@ -329,7 +337,9 @@
             <code>
             <appSettings>
                 <add key="CessaoDigital.Proxy.Conexao.Nome"
-                        value="Sacado1" />
+                        value="ID123" />
+                <add key="CessaoDigital.Proxy.Conexao.Descricao"
+                        value="Nome do Sacado" />
                 <add key="CessaoDigital.Proxy.Conexao.Url"
                         value="https://sacado1.cessaodigital.com.br" />
                 <add key="CessaoDigital.Proxy.Conexao.Versao"
@@ -1400,6 +1410,11 @@
         <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Codigo">
             <summary>
             Código que identifica o Fornecedor unificamente na Plataforma.
+            </summary>
+        </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Instituicao">
+            <summary>
+            Dados da Instituição onde o fornecedor foi formalizado.
             </summary>
         </member>
         <member name="P:CessaoDigital.Proxy.DTOs.StatusDoFornecedor.Habilitado">

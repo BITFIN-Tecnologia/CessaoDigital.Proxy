@@ -16,16 +16,20 @@ namespace CessaoDigital.Proxy
         /// Inicializa a conexão através da URL de produção onde a Plataforma está hospedada.
         /// </summary>
         /// <param name="nome">Nome que identifica unicamente a Conexão.</param>
+        /// <param name="descricao">Descrição amigável da Conexão.</param>
         /// <param name="url">Endereço absoluto da Plataforma.</param>
         /// <param name="versao">Versão da API que deve ser utilizada.</param>
         /// <param name="codigoDoContratante">Código exclusivo do contratante.</param>
         /// <param name="chaveDeIntegracao">Chave de integração da Aplicação.</param>
         /// <param name="timeout">Define o tempo máximo de espera permitido para executar uma requisição. O tempo padrão é de 100 segundos.</param>
         /// <exception cref="ArgumentException">Se o <paramref name="codigoDoContratante"/> ou o <paramref name="chaveDeIntegracao"/> forem <see cref="Guid.Empty"/> ou se a <paramref name="versao"/> for vazia.</exception>
-        public Conexao(string nome, string url, string versao, Guid codigoDoContratante, string chaveDeIntegracao, TimeSpan? timeout = null)
+        public Conexao(string nome, string descricao, string url, string versao, Guid codigoDoContratante, string chaveDeIntegracao, TimeSpan? timeout = null)
         {
             this.Nome =
                 !string.IsNullOrWhiteSpace(nome) ? nome : throw new ArgumentException("O nome da aplicação não foi informada.", nameof(nome));
+
+            this.Descricao =
+                !string.IsNullOrWhiteSpace(descricao) ? descricao : throw new ArgumentException("O descrição da aplicação não foi informada.", nameof(descricao));
 
             this.Url =
                 !string.IsNullOrWhiteSpace(url) && Uri.TryCreate(url, UriKind.Absolute, out var u) ? new(string.Format(u.ToString(), this.Versao)) : throw new ArgumentException("A URL está inválida.", nameof(url));
@@ -45,6 +49,11 @@ namespace CessaoDigital.Proxy
         /// Nome que identifica unicamente a Conexão.
         /// </summary>
         public string Nome { get; private set; }
+
+        /// <summary>
+        /// Descrição amigável da Conexão.
+        /// </summary>
+        public string Descricao { get; set; }
 
         /// <summary>
         /// Versão da API.

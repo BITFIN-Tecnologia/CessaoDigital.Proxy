@@ -17,6 +17,11 @@ namespace CessaoDigital.Proxy.DTOs
         public Guid Codigo { get; set; }
 
         /// <summary>
+        /// Dados da Instituição onde o fornecedor foi formalizado.
+        /// </summary>
+        public Instituicao Instituicao { get; set; }
+
+        /// <summary>
         /// Indica se o fornecedor está ou não habilitado.
         /// </summary>
         public bool Habilitado { get; set; }

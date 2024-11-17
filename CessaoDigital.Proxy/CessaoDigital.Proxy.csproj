@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <DocumentationFile>C:\Projetos\BITFIN\CessaoDigital.Proxy\CessaoDigital.Proxy\CessaoDigital.Proxy.xml</DocumentationFile>
     <PackageId>BITFIN.CessaoDigital.Proxy</PackageId>
-    <Version>0.9.2</Version>
+    <Version>0.9.3</Version>
     <Authors>BITFIN Tecnologia Ltda.</Authors>
     <Company>BITFIN Tecnologia Ltda.</Company>
     <Copyright>Copyright 2024</Copyright>
@@ -19,7 +19,7 @@
     <Description>Biblioteca .NET para consumo dos serviços (API's) fornecidos pela Plataforma Cessão Digital, intermediando a comunicação do Portal para Sacados e Antecipação para Fornecedores.</Description>
     <PackageIcon>Icon.png</PackageIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageReleaseNotes>Inclusão do Floating.</PackageReleaseNotes>
+    <PackageReleaseNotes>Descrição da conexão e inclusão da Instituição que aprovou/rejeitou o fornecedor.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
