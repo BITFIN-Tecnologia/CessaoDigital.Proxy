@@ -67,6 +67,11 @@ namespace CessaoDigital.Proxy.DTOs
         public decimal Floating { get; set; }
 
         /// <summary>
+        /// Quantidade mínima de dias para ser considerada como prazo cobrado.
+        /// </summary>
+        public decimal FloatingMinimo { get; set; }
+
+        /// <summary>
         /// Tarifa de TED/PIX.
         /// </summary>
         public decimal TarifaDePagamento { get; set; }

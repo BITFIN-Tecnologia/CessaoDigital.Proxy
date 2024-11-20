@@ -1117,6 +1117,11 @@
             Quantidade de dias para ser acrescido ao prazo.
             </summary>
         </member>
+        <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.FloatingMinimo">
+            <summary>
+            Quantidade mínima de dias para ser considerada como prazo cobrado.
+            </summary>
+        </member>
         <member name="P:CessaoDigital.Proxy.DTOs.LinhaDeCredito.TarifaDePagamento">
             <summary>
             Tarifa de TED/PIX.
